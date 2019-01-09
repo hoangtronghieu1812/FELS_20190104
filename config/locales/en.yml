@@ -1,7 +1,24 @@
 en:
-words:
-  index:
-    word_list: "Word list"
-    index: "Index"
-    word: "Word"
-    answer: "Answer"
+  words:
+    index:
+      word_list: "Word list"
+      index: "Index"
+      word: "Word"
+      answer: "Answer"
+  users:
+    sessions:
+      new:
+        welcome: "Welcome!"
+        signup: "Sign up"
+        have_an_acc?: "Have an account"
+  static_pages:
+    home:
+      welcome: "Welcome to HTeducation"
+      ht: "HT"
+      edu: "education"
+      logout: "Log out"
+      login: "Log in"
+      home_title: "HTeducation"
+    header:
+      ht: "HT"
+      edu: "education"

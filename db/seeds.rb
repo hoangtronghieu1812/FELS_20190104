@@ -74,5 +74,4 @@ WordAnswer.create! content: "Công an",
                       correct: false,
                       word_id: n+4
 end
-
-
+User.create! email: "user1@example.com", password:"111111"

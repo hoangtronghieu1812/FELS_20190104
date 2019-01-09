@@ -1,0 +1,39 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <span class="login100-form-title p-b-26">
+          <%= t".welcome" %>
+        </span>
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input100" %>
+            <span class="focus-input100" data-placeholder="Email"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate="Enter password">
+            <%= f.password_field :password, autocomplete: "current-password", class: "input100" %>
+            <span class="focus-input100" data-placeholder="Password"></span>
+          </div>
+
+          <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+              <button class="login100-form-btn">
+                Log in
+              </button>
+            </div>
+          </div>
+          <% end %>
+          <div class="text-center p-t-115">
+            <span class="txt1">
+              <%= t".have_an_acc?" %>
+            </span>
+
+            <a class="txt2" href="#">
+              <%= t".signup" %>
+            </a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div id="dropDownSelect1"></div>
