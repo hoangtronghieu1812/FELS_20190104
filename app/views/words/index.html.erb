@@ -1,0 +1,18 @@
+<% provide :title, t(".word_list") %>
+<h1><%= t(".word_list") %></h1>
+<div id="words-table">
+  <table class="table table-hover bg-table ls-words">
+    <thead class="title_table">
+      <tr>
+        <th class="text-c"><%= t(".word") %></th>
+        <th class="text-c"><%= t(".answer") %></th>
+      </tr>
+    </thead>
+    <tbody class="results">
+      <%= render @words %>
+    </tbody>
+  </table>
+</div>
+<div class="paginator">
+  <%== pagy_nav_bootstrap(@pagy) %>
+</div>
