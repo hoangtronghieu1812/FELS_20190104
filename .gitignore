@@ -53,3 +53,6 @@ node_modules/
 .idea/
 /test/*
 database.yml
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
