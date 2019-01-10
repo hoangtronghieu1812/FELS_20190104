@@ -5,8 +5,12 @@ en:
       index: "Index"
       word: "Word"
       answer: "Answer"
-      all_words: "All words"
+      all_course: "All course"
       filter: "filter"
+      AtoZ: "A-Z"
+      learning_condition: "Learning condition"
+      alphabet: "Alphabet"
+      course: "Course"
 
   users:
     sessions:
