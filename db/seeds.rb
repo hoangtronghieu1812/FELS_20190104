@@ -1,3 +1,5 @@
+User.create! email: "user1@example.com", password:"111111"
+
 Course.create! name: "Basic 1",
                 description: "Description: Basic 1"
 
@@ -70,8 +72,34 @@ WordAnswer.create! content: "Công an",
   WordAnswer.create!  content: "Answer #{n+1} true",
                       correct: true,
                       word_id: n+4
-  WordAnswer.create!  content: "Answer #{n+1} false",
+  WordAnswer.create!  content: "1 Answer #{n+1} false",
+                      correct: false,
+                      word_id: n+4
+  WordAnswer.create!  content: "2 Answer #{n+1} false",
+                      correct: false,
+                      word_id: n+4
+  WordAnswer.create!  content: "3 Answer #{n+1} false",
                       correct: false,
                       word_id: n+4
 end
-User.create! email: "user1@example.com", password:"111111"
+
+Lesson.create!  user_id: 1,
+                course_id: 1,
+                results: 20
+
+Lesson.create!  user_id: 1,
+                course_id: 2,
+                results: 30
+
+0.step(20,4) do |n|
+  LessonAnswer.create!  word_answer_id: n+1,
+                        lesson_id: 1
+end
+
+16.step(40,4) do |n|
+  LessonAnswer.create!  word_answer_id: n+1,
+                        lesson_id: 2
+end
+
+
+
