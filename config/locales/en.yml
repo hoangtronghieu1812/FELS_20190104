@@ -6,12 +6,15 @@ en:
       word: "Word"
       answer: "Answer"
       all_words: "All words"
+      filter: "filter"
+
   users:
     sessions:
       new:
         welcome: "Welcome!"
         signup: "Sign up"
         have_an_acc?: "Have an account"
+
   static_pages:
     home:
       welcome: "Welcome to HTeducation"

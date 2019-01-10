@@ -100,6 +100,3 @@ end
   LessonAnswer.create!  word_answer_id: n+1,
                         lesson_id: 2
 end
-
-
-

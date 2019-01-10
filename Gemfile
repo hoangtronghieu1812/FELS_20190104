@@ -21,6 +21,8 @@ gem "jquery-rails"
 gem "i18n-js"
 gem "figaro"
 gem "devise"
+gem "ransack"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
