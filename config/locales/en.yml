@@ -5,6 +5,7 @@ en:
       index: "Index"
       word: "Word"
       answer: "Answer"
+      all_words: "All words"
   users:
     sessions:
       new:
