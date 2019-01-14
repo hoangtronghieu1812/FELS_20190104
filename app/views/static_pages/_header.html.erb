@@ -4,22 +4,37 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <div class="header_content d-flex flex-row align-items-center justify-content-start">
+          <div class="header_content d-flex flex-row
+            align-items-center justify-content-start">
             <div class="logo_container">
               <a href=<%= root_path %>>
-                <div class="logo_text"><%= t".ht" %><span><%= t".edu" %></span></div>
+                <div class="logo_text"><%= t".ht" %>
+                  <span><%= t".edu" %></span></div>
               </a>
             </div>
             <nav class="main_nav_contaner ml-auto">
               <ul class="main_nav">
+                <li class="active">
+                  <%= link_to t(".home"), root_path %>
+                </li>
+                <li><%= link_to t(".about"), "#" %></li>
                 <% if user_signed_in? %>
-                <li><%= link_to (t".logout"), destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to t(".courses"), courses_path %></li>
+                  <li><%= link_to t(".word_list"), words_path %></li>
+                  <li>
+                    <%= link_to t(".logout"), destroy_user_session_path,method: :delete %>
+                  </li>
                 <% else %>
+                  <li>
+                    <%= link_to t(".login"), new_user_session_path %>
+                  </li>
                 <% end %>
               </ul>
-              <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
+              <div class="search_button"><i class="fa fa-search"
+                aria-hidden="true"></i></div>
               <!-- Hamburger -->
-              <div class="shopping_cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+              <div class="shopping_cart"><i class="fa fa-shopping-cart"
+                aria-hidden="true"></i></div>
               <div class="hamburger menu_mm">
                 <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
               </div>

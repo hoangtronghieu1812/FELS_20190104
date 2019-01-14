@@ -1,14 +1,16 @@
-@import "font-awesome";
+@import 'font-awesome';
+@import 'color';
+
 .body{
-padding: 6% 0 0 10%;
-width: 90%;
+  padding: 6% 0 0 10%;
+  width: 90%;
 }
 
 .filter-button{
   width: 35px;
   height: 20px;
   border-radius: 3px;
-  background: #14bdee;
+  background: $blue;
   text-align: center;
   margin: 0 auto;
   margin-top: 20%;
@@ -35,4 +37,22 @@ width: 90%;
 #filter-form{
   margin-left: 1%;
   margin-top: 1%;
+}
+
+.course_price{
+  a{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: $blue;
+  }
+}
+
+.paginator{
+  padding-top: 2%;
+}
+
+h2.headertekst {
+  text-align: center;
+  color: $orange;
 }

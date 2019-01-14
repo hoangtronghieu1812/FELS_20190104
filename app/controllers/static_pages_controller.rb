@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
-  def show
-    render "static_pages/home"
+  def home
+    @courses = Course.all.sort_by{|course| Course.with_users[course.id]}
+      .reverse!.take Settings.courses.popular_course
+    @course_with_users = Course.with_users
   end
 end
