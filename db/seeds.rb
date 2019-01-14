@@ -91,12 +91,14 @@ Lesson.create!  user_id: 1,
                 course_id: 2,
                 results: 30
 
-0.step(20,4) do |n|
-  LessonAnswer.create!  word_answer_id: n+1,
+1.upto 10 do |n|
+  LessonAnswer.create!  word_answer_id: n*4-1,
+                        word_id: n,
                         lesson_id: 1
 end
 
-16.step(40,4) do |n|
-  LessonAnswer.create!  word_answer_id: n+1,
+7.upto 15 do |n|
+  LessonAnswer.create!  word_answer_id: n*4-1,
+                        word_id: n,
                         lesson_id: 2
 end

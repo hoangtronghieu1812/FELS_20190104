@@ -1,14 +1,19 @@
 class WordsController < ApplicationController
   before_action :require_login
+  UNLEARNED = "0"
+  LEARNED = "1"
 
   def index
     @search = Word.ransack(params[:q])
     @courses = Course.all
-    if params[:condition].eql?("1")
-      @lesson_answers = LessonAnswer.get_answer current_user.id
-      @word_ids = @lesson_answers.pluck(:word_id).uniq
-      @pagy, @words = pagy Word.by_ids(@word_ids)
-        .with_correct_answer
+    if !params[:condition].blank?
+      if params[:condition].eql?(LEARNED)
+        @pagy, @words = pagy Word.with_learned(current_user.id)
+          .with_correct_answer
+      elsif params[:condition].eql?(UNLEARNED)
+        @pagy, @words = pagy Word.with_unlearned(current_user.id)
+          .with_correct_answer
+      end
     elsif params[:q]
       @pagy, @words = pagy @search.result.includes(:course)
         .with_correct_answer
