@@ -10,7 +10,7 @@ class Word < ApplicationRecord
     .includes(:lesson).where(lessons: {user_id: user_id})
       .select('word_id'))}
   scope :with_correct_answer, -> {Word.includes(:word_answers)
-    .where(word_answers: {correct: 1})}
+    .where(word_answers: {correct: 1}).order(:content)}
 
   def correct_answer
     word_answers.first
