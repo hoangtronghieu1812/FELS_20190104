@@ -1,4 +1,5 @@
 class Relationship < ApplicationRecord
+  include PublicActivity::Common
   validate :cannot_follow_yourself
   belongs_to :follower, class_name: User.name
   belongs_to :followed, class_name: User.name

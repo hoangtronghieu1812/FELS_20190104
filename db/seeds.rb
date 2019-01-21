@@ -1,12 +1,8 @@
-User.create! email: "user1@example.com", password:"111111", name: "Hieu Hoang Trong"
-User.create! email: "user2@example.com", password:"111111", name: "Phan Quynh Nhu"
-User.create! email: "user3@example.com", password:"111111", name: "Ngo Trang Ngan"
-
-File.open("public/uploads/Hieu.jpg") do |f|
-  User.all.each do |user|
-    user.update_attribute :image, f
-  end
-end
+User.create! email: "user1@example.com", password:"111111", name: "Hieu Hoang Trong", image: File.open("image_for_seed/uploads/Hieu.jpg")
+User.create! email: "user2@example.com", password:"111111", name: "Phan Quynh Nhu",
+  image: File.open("image_for_seed/uploads/Rose.jpg")
+User.create! email: "user3@example.com", password:"111111", name: "Ngo Trang Ngan",
+  image: File.open("image_for_seed/uploads/jennie.png")
 
 Course.create!  name: "Basic 1",
                 description: "Description: Basic 1",
@@ -121,3 +117,37 @@ end
                         word_id: n,
                         lesson_id: 2
 end
+
+Lesson.all.each do |l|
+  l.create_activity :create , owner: User.find(l.user_id), recipient: Course.find(l.course_id)
+end
+
+a = Relationship.create! followed_id: 1, follower_id: 2
+a.create_activity :create, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.create_activity :destroy, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.destroy
+
+a = Relationship.create! followed_id: 1, follower_id: 3
+a.create_activity :create, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.create_activity :destroy, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.destroy
+
+a = Relationship.create! followed_id: 2, follower_id: 3
+a.create_activity :create, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.create_activity :destroy, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.destroy
+
+a = Relationship.create! followed_id: 2, follower_id: 1
+a.create_activity :create, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.create_activity :destroy, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.destroy
+
+a = Relationship.create! followed_id: 3, follower_id: 1
+a.create_activity :create, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.create_activity :destroy, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.destroy
+
+a = Relationship.create! followed_id: 3, follower_id: 2
+a.create_activity :create, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.create_activity :destroy, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
+a.destroy
