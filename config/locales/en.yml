@@ -26,6 +26,10 @@ en:
         welcome: "Welcome!"
         signup: "Sign up"
         have_an_acc?: "Have an account"
+    follow:
+      follow: Follow
+    unfollow:
+      unfollow: Unfollow
 
   static_pages:
     home:
@@ -43,4 +47,23 @@ en:
       courses: "Courses"
       login: "Login"
       word_list: "Word list"
+      search: "Search"
+      search_icon: "search"
 
+  courses:
+    index:
+      all_courses: "All courses"
+    course:
+      word: "Words"
+      learn: "Learn"
+      user: "User"
+
+  searchs:
+    index:
+      courses: "Results for courses"
+      words: "Results for words"
+      doesnot_match: "Your search doesn't match any results!"
+    searching_course:
+      word: "Words"
+      learn: "Learn"
+      user: "User"

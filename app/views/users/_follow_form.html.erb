@@ -1,0 +1,8 @@
+<!-- <div class="tab col-md-3 follow-btn"> -->
+<div id="follow-form" class="col-md-3 follow">
+  <% if @current_user.followed?(@user) %>
+    <%= render "users/unfollow" %>
+  <% else %>
+    <%= render "users/follow" %>
+  <% end %>
+</div>
