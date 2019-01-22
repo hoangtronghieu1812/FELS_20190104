@@ -1,73 +1,78 @@
 User.create! email: "user1@example.com", password:"111111"
+User.create! email: "user2@example.com", password:"111111"
+User.create! email: "user3@example.com", password:"111111"
 
-Course.create! name: "Basic 1",
-                description: "Description: Basic 1"
+Course.create!  name: "Basic 1",
+                description: "Description: Basic 1",
+                image: "course_1.jpg"
 
-Course.create! name: "Basic 2",
-                description: "Description: Basic 2"
+Course.create!  name: "Basic 2",
+                description: "Description: Basic 2",
+                image: "course_2.jpg"
 
-Course.create! name: "Basic 3",
-                description: "Description: Basic 3"
+Course.create!  name: "Basic 3",
+                description: "Description: Basic 3",
+                image: "course_3.jpg"
 
-Word.create! content: "Apple",
+Word.create!  content: "Apple",
               course_id: 1
 
-Word.create! content: "Cat",
+Word.create!  content: "Cat",
               course_id: 1
 
-Word.create! content: "Doctor",
+Word.create!  content: "Doctor",
               course_id: 2
 
-WordAnswer.create! content: "Quả táo",
+WordAnswer.create!  content: "Quả táo",
                     correct: true,
                     word_id: 1
 
-WordAnswer.create! content: "Quả cam",
+WordAnswer.create!  content: "Quả cam",
                     correct: false,
                     word_id: 1
 
-WordAnswer.create! content: "Quả ổi",
+WordAnswer.create!  content: "Quả ổi",
                     correct: false,
                     word_id: 1
 
-WordAnswer.create! content: "Quả xoài",
+WordAnswer.create!  content: "Quả xoài",
                     correct: false,
                     word_id: 1
 
-WordAnswer.create! content: "Con mèo",
+WordAnswer.create!  content: "Con mèo",
                     correct: true,
                     word_id: 2
 
-WordAnswer.create! content: "Con chó",
+WordAnswer.create!  content: "Con chó",
                     correct: false,
                     word_id: 2
 
-WordAnswer.create! content: "Con bò",
+WordAnswer.create!  content: "Con bò",
                     correct: false,
                     word_id: 2
 
-WordAnswer.create! content: "Con trâu",
+WordAnswer.create!  content: "Con trâu",
                     correct: false,
                     word_id: 2
 
-WordAnswer.create! content: "Bác sĩ",
+WordAnswer.create!  content: "Bác sĩ",
                     correct: true,
                     word_id: 3
 
-WordAnswer.create! content: "Nông dân",
+WordAnswer.create!  content: "Nông dân",
                     correct: false,
                     word_id: 3
 
-WordAnswer.create! content: "Giáo viên",
+WordAnswer.create!  content: "Giáo viên",
                     correct: false,
                     word_id: 3
 
-WordAnswer.create! content: "Công an",
+WordAnswer.create!  content: "Công an",
                     correct: false,
                     word_id: 3
 
 20.times do |n|
-  Word.create! content: "Word #{n+1}",
+  Word.create!  content: "Word #{n+1}",
                 course_id: rand(1..3)
   WordAnswer.create!  content: "Answer #{n+1} true",
                       correct: true,
@@ -89,6 +94,14 @@ Lesson.create!  user_id: 1,
 
 Lesson.create!  user_id: 1,
                 course_id: 2,
+                results: 30
+
+Lesson.create!  user_id: 2,
+                course_id: 2,
+                results: 30
+
+Lesson.create!  user_id: 3,
+                course_id: 3,
                 results: 30
 
 1.upto 10 do |n|

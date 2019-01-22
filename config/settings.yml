@@ -3,3 +3,5 @@ word:
   per_page: 20
   page_index: 1
   condition: [["Learned", 1], ["Unlearned", 0]]
+courses:
+  popular_course: 3

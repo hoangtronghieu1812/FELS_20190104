@@ -12,6 +12,14 @@ en:
       alphabet: "Alphabet"
       course: "Course"
 
+  courses:
+    index:
+      all_courses: "All courses"
+    course:
+      word: "Words"
+      learn: "Learn"
+      user: "User"
+
   users:
     sessions:
       new:
@@ -27,6 +35,12 @@ en:
       logout: "Log out"
       login: "Log in"
       home_title: "HTeducation"
+      all_courses: "View all courses"
     header:
       ht: "HT"
       edu: "education"
+      home: "Home"
+      courses: "Courses"
+      login: "Login"
+      word_list: "Word list"
+
