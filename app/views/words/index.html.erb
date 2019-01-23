@@ -7,7 +7,7 @@
       <%= label_tag :learning_condition, t(".learning_condition"),
           class: "form-label" %>
       <%= select_tag :learning_condition, options_for_select(Settings.word
-        .condition, selected: (params[:content_start] || nil)),
+        .condition, selected: (params[:learning_condition] || nil)),
           include_blank: true %>
     </div>
     <div class="form-group col-md-2">
@@ -26,7 +26,7 @@
       <span class="col-md-3">
         <%= button_tag (fa_icon t(".filter")),class: "filter-button" %>
       </span>
-  <% end %>
+    <% end %>
   </div>
 </div>
 

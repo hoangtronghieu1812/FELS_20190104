@@ -1,4 +1,6 @@
 class Word < ApplicationRecord
+  searchkick  highlight: [:content], word_start: [:content]
+
   belongs_to :course
   has_many :word_answers, dependent: :destroy
   has_many :lesson_answers, dependent: :destroy
@@ -15,4 +17,9 @@ class Word < ApplicationRecord
   def correct_answer
     word_answers.first
   end
+
+  def search_data
+    { content: content }
+  end
+
 end

@@ -1,6 +1,12 @@
-User.create! email: "user1@example.com", password:"111111"
-User.create! email: "user2@example.com", password:"111111"
-User.create! email: "user3@example.com", password:"111111"
+User.create! email: "user1@example.com", password:"111111", name: "Hieu Hoang Trong"
+User.create! email: "user2@example.com", password:"111111", name: "Phan Quynh Nhu"
+User.create! email: "user3@example.com", password:"111111", name: "Ngo Trang Ngan"
+
+File.open("public/uploads/Hieu.jpg") do |f|
+  User.all.each do |user|
+    user.update_attribute :image, f
+  end
+end
 
 Course.create!  name: "Basic 1",
                 description: "Description: Basic 1",

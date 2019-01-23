@@ -5,3 +5,7 @@ word:
   condition: [["Learned", 1], ["Unlearned", 0]]
 courses:
   popular_course: 3
+user:
+  size: 200x200
+relationship:
+  cannot_follow_yourself: "can't follow yourself"

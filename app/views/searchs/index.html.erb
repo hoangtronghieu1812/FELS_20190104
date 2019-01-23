@@ -1,0 +1,27 @@
+<div class="super_container">
+<div class="active">
+<h2 class="headertekst"><%= t ".courses" %></h2>
+</div>
+  <div class="row courses_row">
+    <%= render partial: "searching_course",
+      collection: @courses, as: :course %>
+  </div>
+<div class="active">
+<h2 class="headertekst"><%= t ".words" %></h2>
+</div>
+ <% if @words %>
+<ul class="search_results">
+  <% @words.with_highlights.each do |word, highlight| %>
+    <li>
+      <p><%= highlight[:content].html_safe %>...</p>
+    </li>
+  <% end %>
+</ul>
+<% else %>
+  <p> <%= t(".doesnot_match") %> </p>
+<% end %>
+
+  <div class="paginator">
+    <%= paginate @words %>
+  </div>
+</div>

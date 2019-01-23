@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  mount_uploader :image, PictureUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :lessons, dependent: :destroy
@@ -12,4 +11,16 @@ class User < ApplicationRecord
     source: :followed
   has_many :followers, through: :passive_relationships,
     source: :follower
+
+  def follow user
+    following << user
+  end
+
+  def unfollow user
+    following.delete user
+  end
+
+  def followed? user
+    following.include? user
+  end
 end
