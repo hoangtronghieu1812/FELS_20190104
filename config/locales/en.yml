@@ -34,6 +34,9 @@ en:
       memorised: "Memorised words: "
       followers: "Followers: "
       following: "Following: "
+    show:
+      study_history: "Study history"
+      activities: "Activities"
 
   static_pages:
     home:
@@ -71,3 +74,10 @@ en:
       word: "Words"
       learn: "Learn"
       user: "User"
+
+  public_activity:
+    relationship:
+      create:
+        followed: " was now following "
+      destroy:
+        unfollow: " unfollow "

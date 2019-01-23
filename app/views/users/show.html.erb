@@ -1,7 +1,7 @@
 <div class="course">
-    <div class="container">
+   <div class="container">
       <div class="row">
-        <!-- Course -->
+        <!-- Course-container -->
           <div class="course_container">
             <div class="row">
               <div class="col-md-4">
@@ -11,17 +11,18 @@
               <%= render "follow_form" if @user.id != @current_user.id %>
             </div>
             <%= render "details" %>
-            <!-- Course Tabs -->
+            <!-- Tabs -->
             <div class="course_tabs_container">
               <div class="tabs d-flex flex-row align-items-center justify-content-start">
-                <div class="tab active"><%= t".following" %></div>
-                <div class="tab"><%= t".following" %></div>
-                <div class="tab"><%= t".following" %></div>
+                <div class="tab active"><%= t".study_history" %></div>
+                <div class="tab"><%= t".activities" %></div>
               </div>
+
+             <!-- Tab panels -->
               <div class="tab_panels">
 
-                <!-- Description -->
-                <div class="tab_panel active">
+                <!-- Learned course -->
+                <div class="tab_panel">
                   <div class="tab_panel_title"><%= t".summary" %></div>
                   <div class="tab_panel_content">
                     <div class="tab_panel_text">
@@ -43,23 +44,26 @@
                     </div>
                     <div class="tab_panel_faq">
                       <div class="tab_panel_title"></div>
-                <!-- Curriculum -->
-                <div class="tab_panel tab_panel_2">
-                  <div class="tab_panel_content">
-                    <div class="tab_panel_title"><%= t".summary" %></div>
-                    <div class="tab_panel_content">
-                      <div class="tab_panel_text">
-                        <p></p>
-                      </div>
+                    </div>
                   </div>
+                </div>
+
+                <!-- Following activities -->
+                <div class="tab_panel tab_panel_2">
+                  <div class="comments_container">
+                    <ul class="comments_list">
+                      <%= render_activities @activities %>
+                    </ul>
+
+                  </div>
+                </div>
+
               </div>
-            </div>
+            <!-- Tab panels -->
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+          <!-- Course-tab-container -->
+       </div>
+       <!-- Course-container -->
 </div>
 </div>
 </div>
