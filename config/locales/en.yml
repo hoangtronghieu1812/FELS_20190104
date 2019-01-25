@@ -30,6 +30,10 @@ en:
       follow: Follow
     unfollow:
       unfollow: Unfollow
+    details:
+      memorised: "Memorised words: "
+      followers: "Followers: "
+      following: "Following: "
 
   static_pages:
     home:
