@@ -59,3 +59,4 @@ config/environments/*.local.yml
 app/assets/bootstrap4
 app/assets/font-awsome
 question.md
+/public/uploads
