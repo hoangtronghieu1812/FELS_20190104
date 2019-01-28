@@ -21,6 +21,6 @@ class User < ApplicationRecord
   end
 
   def followed? user
-    following.include? user
+    Relationship.exists? follower_id: self.id, followed_id: user.id
   end
 end

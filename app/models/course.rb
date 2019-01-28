@@ -4,7 +4,6 @@ class Course < ApplicationRecord
 
   scope :with_users, -> {Course.includes(:lessons).group(:course_id)
     .count('user_id')}
-  scope :with_lessons, -> {Course.includes :lessons}
   delegate :size, to: :words, prefix: true
 
   def search_data

@@ -1,0 +1,20 @@
+<% provide :title, t(".results") %>
+<h2 class="border-result"><%= t(".point") << @lesson.results.to_s %></h2>
+<div class="row">
+<% @lesson.lesson_answers.includes(word: [:word_answers])
+  .each_with_index do |lesson_answer , n| %>
+<div class="word-answer word-space">
+  <% hidden_field_tag :word_id, value: lesson_answer.word.id %>
+  <h5> <%= t(".question", question_id: n+1) %> </h5><h3><%= lesson_answer.word.content %></h3>
+  <div class="list-answer">
+    <ul>
+      <% lesson_answer.word.word_answers.each do |answer| %>
+      <li class="<%= color_of_answer(answer, lesson_answer) %> col-lg-12">
+        <%= fa_icon check_box_of(answer, lesson_answer), text: answer.content %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
+</div>
