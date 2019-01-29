@@ -807,37 +807,39 @@ section
 7. Course
 *********************************/
 
-.course
+.courses
 {
   width: 100%;
   padding-top: 57px;
   padding-bottom: 100px;
   background: #FFFFFF;
+  box-shadow: 0 1px 20px rgba(3,7,146,0.1);
+
 }
-.course_container
+.courses_container
 {
   width: 100%;
 }
-.course_title
+.courses_title
 {
   font-family: 'Roboto Slab', serif;
   font-size: 36px;
   font-weight: 700;
   color: #384158;
 }
-.course_info
+.courses_info
 {
   width: 100%;
   height: 92px;
-  margin-top: 10px;
+  margin-top: 26px;
   background: #f2f4f5;
 }
-.course_info_item
+.courses_info_item
 {
   width: 33.33333333%;
   padding-left: 30px;
 }
-.course_info_item:not(:last-child)::after
+.courses_info_item:not(:last-child)::after
 {
   display: block;
   position: absolute;
@@ -848,18 +850,18 @@ section
   background: #d9dbdc;
   content: '';
 }
-.course_info_title
+.courses_info_title
 {
   font-family: 'Roboto Slab', serif;
   font-size: 18px;
   font-weight: 700;
   color: #384158;
 }
-.course_info_text
+.courses_info_text
 {
   margin-top: 8px;
 }
-.course_info_text a
+.courses_info_text a
 {
   font-size: 14px;
   color: #384158;
@@ -869,7 +871,7 @@ section
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
 }
-.course_info_text a:hover
+.courses_info_text a:hover
 {
   color: #14bdee;
 }
@@ -1273,7 +1275,7 @@ section
 }
 .comments_container
 {
-  margin-top: 0;
+  margin-top: 80px;
 }
 .comment_item
 {

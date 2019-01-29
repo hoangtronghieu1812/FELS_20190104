@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :courses, only: [:index]
   resources :searchs
   resources :relationships, only: [:create, :destroy]
+  resources :lessons, only: [:index]
 end

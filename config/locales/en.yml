@@ -20,6 +20,16 @@ en:
       learn: "Learn"
       user: "User"
 
+  lessons:
+    lesson:
+      ago: " ago"
+      word: "Words"
+      word_learned: "Words learned:"
+    index:
+      all_lessons: "All lesson histories"
+      trainee: "Trainee:"
+      lessons: "Lessons"
+
   users:
     sessions:
       new:
@@ -56,6 +66,8 @@ en:
       word_list: "Word list"
       search: "Search"
       search_icon: "search"
+      lessons: "Lessons"
+      user: "User"
 
   courses:
     index:
