@@ -1,5 +1,4 @@
 class Course < ApplicationRecord
-  searchkick  highlight: [:name, :description], word_start: [:name, :description]
   has_many :words
   has_many :lessons, dependent: :destroy
 

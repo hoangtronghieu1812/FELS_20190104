@@ -1,0 +1,29 @@
+<div class="courses">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="courses_container">
+          <div class="courses_title"><%= t ".all_lessons" %></div>
+          <div class="courses_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+            <div class="courses_info_item">
+              <div class="courses_info_title"><%= t ".trainee" %></div>
+              <div class="courses_info_text"><%= @user.name %></div>
+            </div>
+            <div class="courses_info_item">
+              <div class="courses_info_title"><%= @lessons.size %></div>
+              <div class="courses_info_text"><%= t ".lessons" %></div>
+            </div>
+            <div class="courses_info_item">
+              <div class="courses_info_title"><%= @words.size %></div>
+              <div class="courses_info_text">Words</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render @lessons %>
+  </div>
+  <div class="paginator">
+    <%== pagy_nav_bootstrap(@pagy) %>
+  </div>
+</div>
