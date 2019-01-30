@@ -124,3 +124,9 @@ en:
       question: "Question %{question_id}: "
       point: "Your point is "
       last: "/5"
+
+  relationships:
+    destroy:
+      none: "Can't find out relationship!."
+    get_followed_user:
+      failed: "Can't find user!"

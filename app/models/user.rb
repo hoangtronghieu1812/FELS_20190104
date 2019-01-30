@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships,
     source: :follower
 
+  scope :get_activities_of, ->user_id { PublicActivity::Activity
+    .includes(:owner, :recipient).where(owner_id: user_id)
+      .order created_at: :desc }
+
   def follow user
     following << user
   end

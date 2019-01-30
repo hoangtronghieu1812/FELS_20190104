@@ -5,8 +5,7 @@ class UsersController < ApplicationController
     @current_user = current_user
     @user = User.find_by id: params[:id]
     require_details_from @user
-    @activities = PublicActivity::Activity.where(owner_id: @user.id)
-      .order created_at: :desc
+    @activities = User.get_activities_of @user.id
   end
 
 end

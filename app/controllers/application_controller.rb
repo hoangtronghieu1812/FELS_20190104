@@ -18,9 +18,8 @@ class ApplicationController < ActionController::Base
     @number_of_followings = user.following.count.to_s
   end
 
-  def get_lesson id  # pass id parameter to reuse in lessons controller and results controller
+  def get_lesson id
     @lesson = Lesson.find_by id: id
-
     return if @lesson
     flash[:danger] = t".failed"
     redirect_to courses_path
