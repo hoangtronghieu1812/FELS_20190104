@@ -12,6 +12,8 @@ class Word < ApplicationRecord
       .select('word_id'))}
   scope :with_correct_answer, -> {Word.includes(:word_answers)
     .where(word_answers: {correct: 1}).order(:content)}
+  scope :random_words, -> {order(Arel.sql("RAND()"))
+    .limit(Settings.word.number_of_words)}
 
   def correct_answer
     word_answers.first

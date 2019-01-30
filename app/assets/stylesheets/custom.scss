@@ -1,5 +1,6 @@
 @import "font-awesome";
 @import 'color';
+@import 'bootstrap';
 
 .body{
   padding: 6% 0 0 10%;
@@ -156,4 +157,84 @@ h2.headertekst {
 .border-result{
   padding-bottom: 0px;
   border-bottom: 2px solid green;
+}
+.drop-list{
+  margin-left: 10%;
+}
+
+.btn-start{
+  margin-left: 85%;
+  margin-top: 85%;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.lesson-title{
+  text-align: center;
+}
+
+.lesson-answer{
+  width: 50%;
+  margin-top: 4%;
+  margin-left: 27%;
+}
+
+.word-answers{
+  box-shadow: 0 1px 20px rgba(3, 7, 146, 0.1);
+}
+
+.list-answers{
+  margin: 2% 0% 5% 4%;
+  font-size: 20px;
+}
+
+.content-word{
+  margin-left: 5%;
+  padding-top: 3%;
+  text-align: center;
+  color: #55555a;
+  font-size: 38px;
+  font-weight: 250px;
+}
+
+.fa-question-circle{
+  font-size: 42px;
+  color: #14bdee;
+}
+
+.btn-next{
+  text-align: center;
+}
+
+.btn-done{
+  text-align: center;
+}
+
+.details{
+  width: 100%;
+  height: 92px;
+  margin-top: 10px;
+  background: #f2f4f5;
+}
+
+.details_container{
+  width: 100%;
+}
+
+.progress{
+  width: 100%;
+  height: 36px;
+  background-color: white;
+  margin-left: 85%;
+}
+
+#question-number{
+  font-family: 'Roboto Slab', serif;
+  font-size: 24px;
+  color: $red;
+  margin-left: 0px;
 }

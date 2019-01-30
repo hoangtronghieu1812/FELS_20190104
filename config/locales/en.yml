@@ -29,6 +29,17 @@ en:
       all_lessons: "All lesson histories"
       trainee: "Trainee:"
       lessons: "Lessons"
+    edit:
+      learn_a_lesson: "Learn a lesson"
+      next: "Next"
+      submit: "Submit"
+      question: "Question: "
+      first_question: "1"
+      last_question: "/5"
+      failed: "Lesson not found!"
+      learned_all_words: "You have learned all words"
+    create:
+      fail: "Can't start lesson"
 
   users:
     sessions:
@@ -41,9 +52,9 @@ en:
     unfollow:
       unfollow: Unfollow
     details:
-      memorised: "Memorised words: "
-      followers: "Followers: "
-      following: "Following: "
+      memorised: "Memorised words: %{quantity} "
+      followers: "Followers: %{quantity}"
+      following: "Following: %{quantity}"
     show:
       study_history: "Study history"
       activities: "Activities"
@@ -76,6 +87,7 @@ en:
       word: "Words"
       learn: "Learn"
       user: "User"
+      start: "Start"
 
   searchs:
     index:
@@ -86,6 +98,9 @@ en:
       word: "Words"
       learn: "Learn"
       user: "User"
+      profile: "Profile"
+      lessons: "Lessons"
+      logout: "Log out"
 
   public_activity:
     relationship:
@@ -100,14 +115,6 @@ en:
         learning: "Learning"
         created: " created "
         lesson: " Lesson "
-
-  lessons:
-    edit:
-      see_correct: "See correct answers"
-      new_lesson: "New lesson"
-      homepage: "Go to homepage"
-      done: "Done"
-      good_effort: "Good effort"
 
   results:
     index:

@@ -1,0 +1,14 @@
+<div class="word-answers" data-id="<%= f.index %>">
+  <div class="content-word">
+    <i class="fa fa-question-circle" aria-hidden="true"></i>
+    <span><%= f.object.word.content %></span>
+  </div>
+  <div class="list-answers">
+    <%= f.collection_check_boxes :word_answer_id, f.object.word.word_answers,
+      :id, :content do |answer| %>
+      <%= answer.label class: "label-checkbox" do %>
+        <%= answer.check_box + " " + answer.text %>
+      <% end %><br/>
+    <% end %>
+  </div>
+</div>
