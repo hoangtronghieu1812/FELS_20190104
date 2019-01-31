@@ -1,8 +1,8 @@
-User.create! email: "user1@example.com", password:"111111", name: "Hieu Hoang Trong", image: File.open("public/image_for_seed/uploads/Hieu.jpg")
+User.create! email: "user1@example.com", password:"111111", name: "Hieu Hoang Trong", image: File.open("app/assets/images/Hieu.jpg")
 User.create! email: "user2@example.com", password:"111111", name: "Phan Quynh Nhu",
-  image: File.open("public/image_for_seed/uploads/Rose.jpg")
+  image: File.open("app/assets/images/Rose.jpg")
 User.create! email: "user3@example.com", password:"111111", name: "Ngo Trang Ngan",
-  image: File.open("public/image_for_seed/uploads/jennie.png")
+  image: File.open("app/assets/images/jennie.png")
 
 Course.create!  name: "Basic 1",
                 description: "Description: Basic 1",

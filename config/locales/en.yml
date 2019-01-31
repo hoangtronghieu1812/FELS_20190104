@@ -100,3 +100,17 @@ en:
         learning: "Learning"
         created: " created "
         lesson: " Lesson "
+
+  lessons:
+    edit:
+      see_correct: "See correct answers"
+      new_lesson: "New lesson"
+      homepage: "Go to homepage"
+      done: "Done"
+      good_effort: "Good effort"
+
+  results:
+    index:
+      results: "Your results"
+      question: "Question %{question_id}: "
+      point: "Your point is "

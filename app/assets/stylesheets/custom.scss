@@ -1,4 +1,4 @@
-@import 'font-awesome';
+@import "font-awesome";
 @import 'color';
 
 .body{
@@ -68,6 +68,10 @@ h2.headertekst {
   margin: 18% 0 0 -12%;
 }
 
+.true-answer{
+  font-color: white;
+  background-color: green;
+}
 .follow-btn{
   height: 40px;
   background: #f2f4f5;
@@ -124,4 +128,32 @@ h2.headertekst {
 
 .course_footer{
   height: 78px;
+}
+
+.lesson-btn{
+  margin: 0 0 0 -85px;
+}
+
+.correct-btn{
+  margin-left: -58px;
+}
+
+.correct-answer{
+  background-color: green;
+  color: white;
+}
+
+.incorrect-answer{
+  background-color: red;
+  color: white;
+}
+
+.word-space{
+  margin-top: 4%;
+  margin-left: 2%;
+}
+
+.border-result{
+  padding-bottom: 0px;
+  border-bottom: 2px solid green;
 }

@@ -9,3 +9,9 @@ user:
   size: 200x200
 relationship:
   cannot_follow_yourself: "can't follow yourself"
+lessons:
+  correct_answer: "correct-answer"
+  incorrect_answer: "incorrect-answer"
+  none: ""
+  check_square: "check-square"
+  square: "square"
