@@ -6,5 +6,7 @@ class Lesson < ApplicationRecord
   has_many :word_answers, through: :lesson_answers
   has_many :words, through: :lesson_answers
   delegate :size, to: :lesson_answers, prefix: true
-
+  accepts_nested_attributes_for :lesson_answers,
+    reject_if: lambda { |a| a[:word_answer_id].blank? },
+      :allow_destroy => true
 end

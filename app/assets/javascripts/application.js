@@ -5,3 +5,4 @@
 //= require activestorage
 //= require turbolinks
 //= require course
+//= require create-lesson

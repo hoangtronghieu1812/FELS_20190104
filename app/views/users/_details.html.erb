@@ -1,19 +1,20 @@
-<div class="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" id="user-details">
+<div class="details d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" id="user-details">
 
-  <div class="course_info_item">
-    <div class="course_info_title"><%= t(".memorised") +
-      @number_of_memorised_words %></div>
-    <div class="course_info_text"><a href="#"></a></div>
+  <div class="courses_info_item">
+    <div class="courses_info_title">
+      <%= t(".memorised", quantity: @number_of_memorised_words) %>
+    </div>
+    <div class="courses_info_text"><a href="#"></a></div>
   </div>
 
-  <div class="course_info_item">
-    <div class="course_info_title"><%= t(".followers") +
-      @number_of_followers %></div>
+  <div class="courses_info_item">
+    <div class="courses_info_title">
+      <%= t(".followers", quantity: @number_of_followers) %></div>
   </div>
 
-  <div class="course_info_item">
-    <div class="course_info_title"><%= t(".following") +
-      @number_of_followings %></div>
+  <div class="courses_info_item">
+    <div class="courses_info_title">
+      <%= t(".following", quantity: @number_of_followings) %></div>
   </div>
 
 </div>

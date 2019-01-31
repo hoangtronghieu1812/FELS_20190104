@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :results, only: [:index]
   end
+  resources :lessons
 end

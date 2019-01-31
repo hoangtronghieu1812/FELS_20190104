@@ -22,9 +22,20 @@
           <i class="fa fa-star" aria-hidden="true"></i>
           <span><%= course.words_size %> <%= t ".word" %></span>
         </div>
-        <div class="course_price ml-auto">
-          <%= link_to t(".learn"), "#" %>
-        </div>
+        <% if @user %>
+          <div class="lesson">
+            <%= form_for @user.lessons.build do |f| %>
+              <%= f.hidden_field :course_id, value: course.id %>
+              <div class="course_price ml-auto">
+                <%= f.submit t(".start"), class: "btn btn-primary btn-start" %>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="course_price ml-auto">
+            <%= link_to t(".learn"), courses_path %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

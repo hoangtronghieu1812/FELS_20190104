@@ -26,4 +26,7 @@ class ApplicationController < ActionController::Base
     redirect_to courses_path
   end
 
+  def get_user
+    @user = current_user
+  end
 end

@@ -3,6 +3,7 @@ word:
   per_page: 20
   page_index: 1
   condition: [["Learned", 1], ["Unlearned", 0]]
+  number_of_words: 5
 courses:
   popular_course: 3
 user:
