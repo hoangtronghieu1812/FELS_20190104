@@ -4,11 +4,11 @@
     <span><%= f.object.word.content %></span>
   </div>
   <div class="list-answers">
-    <%= f.collection_check_boxes :word_answer_id, f.object.word.word_answers,
+    <%= f.collection_radio_buttons :word_answer_id, f.object.word.word_answers,
       :id, :content do |answer| %>
-      <%= answer.label class: "label-checkbox" do %>
-        <%= answer.check_box + " " + answer.text %>
-      <% end %><br/>
+      <%= answer.label {answer.radio_button + " " + answer.text} %>
+      <br/>
     <% end %>
   </div>
+    <%= f.hidden_field :word_id, value: f.object.word.id %>
 </div>

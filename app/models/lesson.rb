@@ -8,5 +8,5 @@ class Lesson < ApplicationRecord
   delegate :size, to: :lesson_answers, prefix: true
   accepts_nested_attributes_for :lesson_answers,
     reject_if: lambda { |a| a[:word_answer_id].blank? },
-      :allow_destroy => true
+      allow_destroy: true
 end

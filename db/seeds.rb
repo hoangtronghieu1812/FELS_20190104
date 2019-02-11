@@ -84,56 +84,6 @@ WordAnswer.create!  content: "Công an",
                       word_id: n+4
 end
 
-Lesson.create!  user_id: 1,
-                course_id: 1,
-                results: 20
-
-Lesson.create!  user_id: 1,
-                course_id: 2,
-                results: 30
-
-Lesson.create!  user_id: 2,
-                course_id: 2,
-                results: 30
-
-Lesson.create!  user_id: 3,
-                course_id: 3,
-                results: 30
-
-10.times do |n|
-  Lesson.create!  user_id: rand(1..3),
-                  course_id: rand(1..6),
-                  results: rand(20..50)
-end
-
-Lesson.create!  user_id: 2,
-                course_id: 2,
-                results: 30
-
-Lesson.create!  user_id: 3,
-                course_id: 3,
-                results: 30
-
-1.upto 10 do |n|
-  LessonAnswer.create!  word_answer_id: n*4-1,
-                        word_id: n,
-                        lesson_id: 1
-end
-
-7.upto 15 do |n|
-  LessonAnswer.create!  word_answer_id: n*4-1,
-                        word_id: n,
-                        lesson_id: 2
-end
-
-LessonAnswer.create! word_id: 17,
-                     word_answer_id: 67,
-                     lesson_id: 2
-
-Lesson.all.each do |l|
-  l.create_activity :create , owner: User.find(l.user_id), recipient: Course.find(l.course_id)
-end
-
 a = Relationship.create! followed_id: 1, follower_id: 2
 a.create_activity :create, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
 a.create_activity :destroy, owner: User.find(a.follower_id), recipient: User.find(a.followed_id)
