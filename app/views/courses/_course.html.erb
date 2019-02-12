@@ -1,11 +1,11 @@
 <div class="col-lg-4 course_col">
   <div class="course">
     <div class="course_image">
-      <%= link_to image_tag(course.image), "#" %>
+      <%= image_tag(course.image) %>
     </div>
     <div class="course_body">
       <h3 class="course_title">
-        <%= link_to course.name, "#" %>
+        <%= course.name %>
       </h3>
       <div class="course_text">
         <p><%= course.description %></p>

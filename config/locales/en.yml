@@ -40,6 +40,8 @@ en:
       learned_all_words: "You have learned all words"
     create:
       fail: "Can't start lesson"
+    update:
+      error: "Error while submitting the answers!"
 
   users:
     sessions:
@@ -121,3 +123,4 @@ en:
       results: "Your results"
       question: "Question %{question_id}: "
       point: "Your point is "
+      last: "/5"
