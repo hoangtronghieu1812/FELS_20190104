@@ -5,7 +5,7 @@
           <div class="details_container">
             <div class="row">
               <div class="col-md-4">
-                <div class="course_title"><%= @user.name %></div>
+                <div class="courses_title"><%= @user.name %></div>
                   <%= image_tag @user.image.url, size: Settings.user.size %>
                 </div>
               <%= render "follow_form" if @user.id != @current_user.id %>
