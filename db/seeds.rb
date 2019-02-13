@@ -7,7 +7,7 @@ User.create! email: "user3@example.com", password:"111111", name: "Ngo Trang Nga
 6.times do |n|
   Course.create!  name: "Basic #{n+1}",
                   description: "Description: Basic #{n+1}",
-                  image: "course_#{n+1}.jpg"
+                  image: File.open("app/assets/images/course_#{n+1}.jpg")
 end
 
 Word.create!  content: "Apple",

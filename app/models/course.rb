@@ -1,4 +1,5 @@
 class Course < ApplicationRecord
+  mount_uploader :image, PictureUploader
   has_many :words
   has_many :lessons, dependent: :destroy
   scope :with_users, -> {Lesson.includes(:course).group(:course_id)

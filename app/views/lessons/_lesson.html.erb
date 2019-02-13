@@ -1,6 +1,6 @@
 <div class="sidebar_teacher">
   <div class="teacher_title_container d-flex flex-row align-items-center justify-content-start">
-    <div class="teacher_image"><%= image_tag(lesson.course.image) %></div>
+    <div class="teacher_image"><%= image_tag(lesson.course.image.url) %></div>
     <div class="teacher_title">
       <div class="teacher_name"> <%= link_to lesson.course.name, "#" %></div>
       <div class="teacher_position">
