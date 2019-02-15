@@ -60,6 +60,7 @@ en:
     show:
       study_history: "Study history"
       activities: "Activities"
+      edit: "Edit"
 
   static_pages:
     home:
@@ -130,3 +131,23 @@ en:
       none: "Can't find out relationship!."
     get_followed_user:
       failed: "Can't find user!"
+
+  devise:
+    registrations:
+      edit:
+        edit: "Edit"
+        update: "Update"
+        current_password_require: "we need your current password to confirm your changes"
+        confirm: "Are you sure?"
+        cancel_my_account: "Cancel my account"
+        un_happy: "Unhappy?"
+        back: "Back"
+        currently_waiting: "Currently waiting confirmation for:"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot_password: "Forgot your password?"
+        didn't_receive_confirmation: "Didn't receive confirmation instructions?"
+        didn't_receive_unlock: "Didn't receive unlock instructions?"
+        sign_in_with: "Sign in with %{social}"

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for user
     session[:forward_url] ? session.delete(:forward_url) : super
@@ -27,5 +28,14 @@ class ApplicationController < ActionController::Base
 
   def get_user
     @user = current_user
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    attrs = [:email, :password, :password_confirmation,
+     :name, :image, :phone, :age, :job]
+    devise_parameter_sanitizer.permit(:account_update,
+      keys: [attrs, :current_password])
   end
 end
