@@ -1,6 +1,7 @@
 class RelationshipsController < ApplicationController
   before_action :require_login, only: [:create, :destroy]
   before_action :get_followed_user
+  load_and_authorize_resource only: [:create, :destroy]
 
   def create
     relationship = current_user.active_relationships

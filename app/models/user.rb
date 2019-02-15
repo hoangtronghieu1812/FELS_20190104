@@ -16,6 +16,8 @@ class User < ApplicationRecord
     .includes(:owner, :recipient).where(owner_id: user_id)
       .order created_at: :desc }
 
+  enum role: [:member, :admin]
+
   def follow user
     following << user
   end

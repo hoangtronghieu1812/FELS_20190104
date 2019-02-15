@@ -1,6 +1,16 @@
 class ApplicationController < ActionController::Base
+  before_action :get_user
   include Pagy::Backend
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_path
+    flash[:danger] = t".can't_access"
+  end
+
+  # def current_ability
+  #   @current_ability ||= Ability.new(current_user)
+  # end
 
   def after_sign_in_path_for user
     session[:forward_url] ? session.delete(:forward_url) : super
@@ -27,7 +37,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_user
-    @user = current_user
+    @current_user = current_user
   end
 
   protected
