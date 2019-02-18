@@ -1,8 +1,10 @@
-User.create! email: "user1@example.com", password:"111111", name: "Hieu Hoang Trong", image: File.open("app/assets/images/Hieu.jpg")
+User.create! email: "user1@example.com", password:"111111", name: "Hieu Hoang Trong", image: File.open("app/assets/images/Hieu.jpg"), role: :member
 User.create! email: "user2@example.com", password:"111111", name: "Phan Quynh Nhu",
-  image: File.open("app/assets/images/Rose.jpg")
+  image: File.open("app/assets/images/Rose.jpg"), role: :member
 User.create! email: "user3@example.com", password:"111111", name: "Ngo Trang Ngan",
-  image: File.open("app/assets/images/jennie.png")
+  image: File.open("app/assets/images/jennie.png"), role: :member
+User.create! email: "user4@example.com", password:"111111", name: "Trang Ngan",
+  image: File.open("app/assets/images/jennie.png"), role: :admin
 
 6.times do |n|
   Course.create!  name: "Basic #{n+1}",
