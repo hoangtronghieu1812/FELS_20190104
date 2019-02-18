@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-  before_action :get_user, only: :home
 
   def home
     @courses = Course.all.sort_by{|course| Course.with_users[course.id] || 0}

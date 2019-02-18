@@ -2,6 +2,7 @@ class WordsController < ApplicationController
   before_action :require_login
   UNLEARNED = "0"
   LEARNED = "1"
+  load_and_authorize_resource
 
   def index
     @search = Word.ransack(course_id_eq: params[:course_id_eq],

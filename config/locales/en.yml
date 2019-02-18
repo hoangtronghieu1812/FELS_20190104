@@ -1,4 +1,6 @@
 en:
+  application:
+    can't_access: "You can't access admin dashboard!"
   words:
     index:
       word_list: "Word list"

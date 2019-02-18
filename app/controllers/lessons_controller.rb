@@ -3,11 +3,11 @@ class LessonsController < ApplicationController
   before_action only: %i(edit update) do
     get_lesson params[:id]
   end
+  load_and_authorize_resource only: %i(create edit update)
 
   def index
-    @user ||= current_user
-    @words = Word.with_learned(@user.id).with_correct_answer
-    @pagy, @lessons = pagy @user.lessons
+    @words = Word.with_learned(current_user.id).with_correct_answer
+    @pagy, @lessons = pagy current_user.lessons
   end
 
   def create
