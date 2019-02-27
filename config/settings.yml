@@ -16,3 +16,6 @@ lessons:
   none: ""
   check_square: "check-square"
   square: "square"
+admin:
+  correct: true
+  incorrect: false
