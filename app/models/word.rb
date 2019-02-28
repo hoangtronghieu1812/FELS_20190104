@@ -16,6 +16,10 @@ class Word < ApplicationRecord
   scope :random_words, -> {order(Arel.sql("RAND()"))
     .limit(Settings.word.number_of_words)}
 
+  accepts_nested_attributes_for :word_answers,
+    reject_if: lambda { |a| a[:content].blank? },
+      allow_destroy: true
+
   def correct_answer
     word_answers.first
   end

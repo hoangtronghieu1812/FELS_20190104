@@ -1,12 +1,11 @@
-RailsAdmin.config do |config|
-
   ### Popular gems integration
 
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user
   # end
-  config.current_user_method(&:current_user)
+  require Rails.root.join('lib', 'rails_admin', 'custom_action.rb')
+  RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::CustomAction)
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -22,23 +21,47 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
-  config.parent_controller = "ApplicationController"
-  config.included_models = [Course, Word, WordAnswer, User]
-  config.label_methods << :content
-  config.authorize_with :cancancan
 
-  config.actions do
-    dashboard                     # mandatory
-    index                         # mandatory
-    new
-    bulk_delete
-    show
-    edit
-    delete
-    show_in_app
+  RailsAdmin.config do |config|
+    config.parent_controller = "ApplicationController"
+    config.included_models = [Course, Word, WordAnswer, User]
+    config.label_methods << :content
+    config.authorize_with :cancancan
+    config.current_user_method(&:current_user)
 
-    ## With an audit adapter, you can add:
-    # history_index
-    # history_show
+    config.model "Word" do
+      create do
+        field :content
+        field :course_id
+      end
+    end
+
+    config.model "WordAnswer" do
+      create do
+        field :content
+        field :correct
+        field :word_id
+      end
+    end
+
+    config.actions do
+      dashboard                     # mandatory
+      index                         # mandatory
+      new do
+        except ['Word']
+      end
+      bulk_delete
+      show
+      edit do
+        except ['Word']
+      end
+      delete
+      show_in_app
+      new_word
+      edit_word
+
+      ## With an audit adapter, you can add:
+      # history_index
+      # history_show
+    end
   end
-end

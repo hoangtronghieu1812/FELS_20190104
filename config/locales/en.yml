@@ -153,3 +153,31 @@ en:
         didn't_receive_confirmation: "Didn't receive confirmation instructions?"
         didn't_receive_unlock: "Didn't receive unlock instructions?"
         sign_in_with: "Sign in with %{social}"
+
+  admin:
+    actions:
+      new_word:
+        title: "Add Word"
+        breadcrumb: "New"
+        save: "Save"
+        fail: "Word create failed, try again!"
+      edit_word:
+        title: "Edit Word"
+        breadcrumb: "Edit"
+        menu: "Edit"
+  rails_admin:
+    main:
+      new_word:
+        save: "Save"
+      edit_word:
+        save: "Save"
+      word_answer_fields:
+        word_answer: "Word answer:"
+        remove: "Remove"
+        correct_answer: "True"
+        in_correct_answer: "False"
+      form:
+        add: "Add an answer"
+
+
+
