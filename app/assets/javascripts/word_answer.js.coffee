@@ -1,8 +1,7 @@
 jQuery ->
   $('form').on 'click', '.remove_fields', (event) ->
-    $(this).prev('input[type=hidden]').val('1')
-    $("#allow-destroy").val('1')
-    $(this).closest('fieldset').hide()
+    $(this).closest('fieldset').find(".allow-destroy").val('1')
+    $(this).closest('fieldset').find(".word-answer-content").remove()
     event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->

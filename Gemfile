@@ -29,6 +29,7 @@ gem "carrierwave"
 gem "public_activity"
 gem "rails_admin", "=1.4.0"
 gem "cancancan", "~> 2.0"
+gem "searchkick", "~>3.1.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
