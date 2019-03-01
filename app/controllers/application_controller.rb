@@ -40,6 +40,10 @@ class ApplicationController < ActionController::Base
     @current_user = current_user
   end
 
+   def get_course_with_users
+    @course_with_users = Course.with_users
+  end
+
   protected
 
   def configure_permitted_parameters

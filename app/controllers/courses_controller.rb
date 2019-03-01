@@ -1,9 +1,9 @@
 class CoursesController < ApplicationController
   before_action :require_login
+  before_action :get_course_with_users
   load_and_authorize_resource only: :index
 
   def index
-    @course_with_users = Course.with_users
     @pagy, @courses = pagy Course.all
   end
 end

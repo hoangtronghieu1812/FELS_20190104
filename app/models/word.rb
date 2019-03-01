@@ -1,4 +1,5 @@
 class Word < ApplicationRecord
+  searchkick word_start: [:content], highlight: [:content]
   belongs_to :course
   has_many :word_answers, dependent: :destroy
   has_many :lesson_answers, dependent: :destroy
@@ -15,6 +16,9 @@ class Word < ApplicationRecord
     .where(word_answers: {correct: 1}).order(:content)}
   scope :random_words, -> {order(Arel.sql("RAND()"))
     .limit(Settings.word.number_of_words)}
+  scope :with_users, -> {Word.includes(lesson_answers: [:lesson])
+    .where.not(lesson_answers: {word_answer_id: nil})
+      .group(:word_id).count(:user_id)}
 
   accepts_nested_attributes_for :word_answers,
     reject_if: lambda { |a| a[:content].blank? },
