@@ -23,5 +23,4 @@ class WordsController < ApplicationController
       format.html
     end
   end
-
 end

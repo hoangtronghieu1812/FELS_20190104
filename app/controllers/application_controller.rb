@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
   # end
 
   def after_sign_in_path_for user
-    session[:forward_url] ? session.delete(:forward_url) : super
+    if current_user.admin?
+      rails_admin_url
+    else
+      session[:forward_url] ? session.delete(:forward_url) : super
+    end
   end
 
   def require_login
@@ -44,8 +48,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     attrs = [:email, :password, :password_confirmation,
-     :name, :image, :phone, :age, :job]
+     :name, :image, :phone, :age, :job, :dob]
     devise_parameter_sanitizer.permit(:account_update,
       keys: [attrs, :current_password])
+    devise_parameter_sanitizer.permit(:sign_up,
+      keys: attrs)
   end
 end

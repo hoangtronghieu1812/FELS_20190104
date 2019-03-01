@@ -29,4 +29,12 @@ class User < ApplicationRecord
   def followed? user
     Relationship.exists? follower_id: self.id, followed_id: user.id
   end
+
+  def three_next_birthdays
+    a = [0,1,2]
+    a.each do |i|
+      a[i] = Date.new Date.current.year + i, dob.month, dob.day
+    end
+  end
+
 end
