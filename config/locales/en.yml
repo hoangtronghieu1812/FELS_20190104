@@ -13,6 +13,7 @@ en:
       learning_condition: "Learning condition"
       alphabet: "Alphabet"
       course: "Course"
+      number_of_users: "Number of users learned this word"
 
   courses:
     index:

@@ -30,19 +30,17 @@
   </div>
 </div>
 
-<div id="words-table">
-  <table class="table table-hover bg-table ls-words">
-  <thead class="title_table">
-    <tr>
-      <th class="text-c"><%= t(".word") %></th>
-      <th class="text-c"><%= t(".answer") %></th>
-    </tr>
-  </thead>
-  <tbody class="results">
-    <%= render @words %>
-  </tbody>
-</table>
+<div class="row word-title">
+  <h3 class="col-sm-3" ><%= t".word" %></h3>
+  <h3 class="col-sm-5" ><%= t".number_of_users" %></h3>
 </div>
-<div class="paginator">
-  <%== pagy_nav_bootstrap(@pagy) %>
+
+<div class="row">
+  <% @words.each do |word| %>
+    <div class="col-sm-4 word-content"><%= word.content %></div>
+    <div class="col-sm-6 word-content"><%= Word.with_users[word.id] || 0 %></div>
+  <% end %>
 </div>
+
+<div class="row"></div>
+  <%== pagy_bootstrap_nav(@pagy) %>
