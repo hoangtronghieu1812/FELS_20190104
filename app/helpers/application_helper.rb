@@ -29,4 +29,19 @@ module ApplicationHelper
     link_to(name, '#', class: "add_fields",
       data: {id: id, fields: fields.gsub("\n", "")})
   end
+
+  def menu_for_word(parent, abstract_model = nil, object = nil,
+    only_icon = false)
+    actions = actions(parent, abstract_model, object)
+      .select{|a| a.http_methods.include?(:get)}
+    wording = wording_for(:menu, :new)
+      %(
+        <li class="icon new_collection_link">
+          <a class="pjax" href="http://localhost:3000/admin/word/new_word">
+            <i class="icon-plus"></i>
+            <span#{only_icon ? " style='display:none'" : ''}>#{wording}</span>
+          </a>
+        </li>
+      ).html_safe
+  end
 end

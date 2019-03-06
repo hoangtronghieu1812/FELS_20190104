@@ -24,7 +24,7 @@
 
   RailsAdmin.config do |config|
     config.parent_controller = "ApplicationController"
-    config.included_models = [Course, Word, WordAnswer, User]
+    config.included_models = [Course, Word, User]
     config.label_methods << :content
     config.authorize_with :cancancan
     config.current_user_method(&:current_user)
@@ -46,7 +46,7 @@
 
     config.actions do
       dashboard                     # mandatory
-      index                         # mandatory
+      index                    # mandatory
       new do
         except ['Word']
       end
