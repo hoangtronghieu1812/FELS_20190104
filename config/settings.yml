@@ -8,6 +8,7 @@ courses:
   popular_course: 3
 user:
   size: 200x200
+  member_role: 0
 relationship:
   cannot_follow_yourself: "can't follow yourself"
 lessons:

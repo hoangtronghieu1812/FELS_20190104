@@ -2,6 +2,7 @@ class User < ApplicationRecord
   mount_uploader :image, PictureUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
   has_many :lessons, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
@@ -28,5 +29,19 @@ class User < ApplicationRecord
 
   def followed? user
     Relationship.exists? follower_id: self.id, followed_id: user.id
+  end
+
+  class << self
+    def from_omniauth auth
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.email = auth.info.email
+        user.password = Devise.friendly_token[0,20]
+        user.name = auth.info.name
+        user.image = auth.info.image
+        user.role = Settings.user.member_role
+      end
+    end
   end
 end
