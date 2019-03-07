@@ -78,6 +78,31 @@ module RailsAdmin
           end
         end
       end
+
+       class ImportWord < CustomAction
+        RailsAdmin::Config::Actions.register(self)
+
+        register_instance_option :collection do
+          true
+        end
+
+        register_instance_option :http_methods do
+          [:get, :post]
+        end
+
+        register_instance_option :controller do
+          Proc.new do
+            if request.get?
+              respond_to do |format|
+                format.html {render @action.template_name}
+              end
+            elsif request.post?
+              Word.import_file(params[:file])
+                redirect_to index_path(@model_name), notice: "Words imported."
+            end
+          end
+        end
+      end
     end
   end
 end

@@ -31,6 +31,9 @@ gem "rails_admin", "=1.4.0"
 gem "cancancan", "~> 2.0"
 gem "searchkick", "~>3.1.0"
 gem "omniauth-google-oauth2", "=0.6.0"
+gem "roo", "~> 2.8.0"
+gem "roo-xls"
+gem "activerecord-import", "=0.22.0"
 
 
 group :development, :test do

@@ -172,6 +172,9 @@ en:
         title: "Edit Word"
         breadcrumb: "Edit"
         menu: "Edit"
+      import_word:
+        title: Import Words
+        breadcrumb: "Import"
   rails_admin:
     main:
       new_word:
@@ -185,6 +188,9 @@ en:
         in_correct_answer: "False"
       form:
         add: "Add an answer"
+      import_word:
+        title: "Import from Excel file"
+        import: "Import"
 
 
 
