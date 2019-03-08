@@ -1,30 +1,28 @@
 <% provide :title, t(".word_list") %>
 <h1><%= t(".word_list") %></h1>
-<div class="row", id="filter-form">
+<div class="row fil-form", id="filter-form">
   <%= form_tag words_path, method: :get, remote: true do |f| %>
-  <div class="row">
+  <div class="row fil-condition">
     <div class="form-group col-md-3">
-      <%= label_tag :learning_condition, t(".learning_condition"),
-          class: "form-label" %>
-      <%= select_tag :learning_condition, options_for_select(Settings.word
-        .condition, selected: (params[:learning_condition] || nil)),
-          include_blank: true %>
+      <%= radio_button_tag :learning_condition, "" %> <%= "All" %><br />
+      <%= radio_button_tag :learning_condition, 1 %> <%= t ".learned" %><br />
+      <%= radio_button_tag :learning_condition, 0 %> <%= t ".unlearned" %><br />
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <%= label_tag :course, t(".course"), class: "form-label" %>
       <%= select_tag :course_id_eq,
         options_from_collection_for_select(@courses,
           :id, :name, selected: (params[:content_start] || nil)),
             include_blank: t(".all_course") %>
     </div>
-    <div class="form-3 col-md-2">
+    <div class="form-group col-md-3">
       <%= label_tag :alphabet, t(".alphabet"), class: "form-label" %>
       <%= select_tag :content_start, options_for_select((:A..:Z).to_a,
         selected: (params[:content_start] || nil)),
           include_blank: t(".AtoZ") %>
     </div>
-      <span class="col-md-3">
-        <%= button_tag (fa_icon t(".filter")),class: "filter-button" %>
+      <span class="col-md-2">
+        <%= button_tag (fa_icon t(".filter")),class: "btn btn-filter" %>
       </span>
     <% end %>
   </div>
@@ -34,12 +32,8 @@
   <h3 class="col-sm-3" ><%= t".word" %></h3>
   <h3 class="col-sm-5" ><%= t".number_of_users" %></h3>
 </div>
-
-<div class="row">
-  <% @words.each do |word| %>
-    <div class="col-sm-4 word-content"><%= word.content %></div>
-    <div class="col-sm-6 word-content"><%= Word.with_users[word.id] || 0 %></div>
-  <% end %>
+<div class="row results">
+  <%= render @words %>
 </div>
 
 <div class="row"></div>

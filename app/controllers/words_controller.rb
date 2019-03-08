@@ -8,6 +8,7 @@ class WordsController < ApplicationController
     @search = Word.ransack(course_id_eq: params[:course_id_eq],
       content_start: params[:content_start])
     @courses = Course.all
+    @word_with_users = Word.with_users
 
     if params[:learning_condition].eql?(LEARNED)
       @pagy, @words = pagy @search.result.with_learned(current_user.id)

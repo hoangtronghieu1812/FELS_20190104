@@ -6,8 +6,6 @@ class RelationshipsController < ApplicationController
   def create
     relationship = current_user.active_relationships
       .create! followed_id: params[:followed_id]
-    relationship.create_activity :create,
-      owner: current_user, recipient: @user if relationship
     require_details_from @user
     respond_to do |format|
       format.html { redirect_to @user }
@@ -18,8 +16,6 @@ class RelationshipsController < ApplicationController
   def destroy
     relationship = Relationship.find_by(id: params[:id])
     if relationship
-      relationship.create_activity :destroy,
-        owner: current_user, recipient: @user
       current_user.unfollow @user
       require_details_from @user
     else
