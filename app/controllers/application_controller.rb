@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :get_user
+  before_action :get_user_details
   include Pagy::Backend
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -36,8 +36,14 @@ class ApplicationController < ActionController::Base
     redirect_to courses_path
   end
 
-  def get_user
+  def get_user_details
     @current_user = current_user
+    @activities = user_signed_in? ? User
+      .get_activities_of(current_user.id) : []
+  end
+
+   def get_course_with_users
+    @course_with_users = Course.with_users
   end
 
    def get_course_with_users

@@ -1,4 +1,5 @@
 //= require jquery
+//= require cable
 //= require popper
 //= require bootstrap
 //= require jquery_ujs
@@ -8,4 +9,4 @@
 //= require course
 //= require create-lesson
 //= require word_answer
-
+//= require notification
