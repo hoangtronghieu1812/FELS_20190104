@@ -1,4 +1,5 @@
 class Course < ApplicationRecord
+  include PublicActivity::Common
   searchkick word_start: [:name, :description],
     highlight: [:name, :description]
   mount_uploader :image, PictureUploader

@@ -85,6 +85,8 @@ en:
       search_icon: "search"
       lessons: "Lessons"
       user: "User"
+    notification_center:
+      notifications: "Notifications"
 
   courses:
     index:
@@ -121,6 +123,10 @@ en:
         learning: "Learning"
         created: " created "
         lesson: " Lesson "
+    course:
+      finished:
+        finish: " 've just finished "
+        course: "Course"
 
   results:
     index:

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include PublicActivity::Model
   mount_uploader :image, PictureUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -12,9 +13,8 @@ class User < ApplicationRecord
     source: :followed
   has_many :followers, through: :passive_relationships,
     source: :follower
-
   scope :get_activities_of, ->user_id { PublicActivity::Activity
-    .includes(:owner, :recipient).where(owner_id: user_id)
+    .includes(:owner, :recipient).where(recipient_id: user_id)
       .order created_at: :desc }
 
   enum role: [:member, :admin]
@@ -29,6 +29,10 @@ class User < ApplicationRecord
 
   def followed? user
     Relationship.exists? follower_id: self.id, followed_id: user.id
+  end
+
+  def number_of_activities
+    User.get_activities_of(self.id).count
   end
 
   class << self
