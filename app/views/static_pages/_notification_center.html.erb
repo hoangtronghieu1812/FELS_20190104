@@ -1,0 +1,14 @@
+<ul class="notificator bell-btn">
+  <a href="#" id="open_notification">
+    <%= render "static_pages/counter" , counter: @current_user.number_of_activities %>
+  </a>
+  <div id="notificationContainer">
+    <div id="notificationTitle"><%= t".notifications" %></div>
+    <div id="notificationsBody" class="notifications">
+      <ul id="notificationList">
+        <%= render_activity @activities %>
+      </ul>
+    </div>
+    <div id="notificationFooter"></div>
+  </div>
+</ul>
