@@ -1,4 +1,4 @@
-User.create! email: "user1@example.com", password:"111111", name: "Hieu Hoang Trong", image: File.open("app/assets/images/Hieu.jpg"), role: :member
+User.create! email: "hoangtronghieu1812@gmail.com", password:"111111", name: "Hieu Hoang Trong", image: File.open("app/assets/images/Hieu.jpg"), role: :member
 User.create! email: "user2@example.com", password:"111111", name: "Phan Quynh Nhu",
   image: File.open("app/assets/images/Rose.jpg"), role: :member
 User.create! email: "user3@example.com", password:"111111", name: "Ngo Trang Ngan",

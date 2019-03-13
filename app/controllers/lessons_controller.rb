@@ -39,6 +39,7 @@ class LessonsController < ApplicationController
       @lesson.update_attributes! lesson_params
       @lesson.update_attributes! results: WordAnswer
         .get_result_of_lesson(@lesson.id)
+      SendResultsJob.perform_later @lesson.user , @lesson
       redirect_to lesson_results_path @lesson
     end
     if @lesson.course.words.with_unlearned(@lesson.user_id).empty?
@@ -47,7 +48,7 @@ class LessonsController < ApplicationController
           owner: @lesson.user, recipient: recipient)
         if notification
           NotificationJob.perform_later recipient
-          .number_of_activities , notification
+            .number_of_activities , notification
         end
       end
     end

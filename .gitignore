@@ -60,4 +60,5 @@ app/assets/bootstrap4
 app/assets/font-awsome
 question.md
 /public/uploads
-config/application.yml
+# Ignore application configuration
+/config/application.yml

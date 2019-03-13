@@ -1,4 +1,6 @@
 <% provide :title, t(".results") %>
+<h3> <%= t(".you", course: @lesson.course.name) %> </h3>
+<div class="container">
 <h2 class="border-result"><%= t".point" %>
   <span class="lesson-result"><%= @lesson.results %></span><span><%= t".last" %></span>
 </h2>
@@ -18,4 +20,5 @@
   </div>
 </div>
 <% end %>
+</div>
 </div>

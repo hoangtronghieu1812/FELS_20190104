@@ -1,4 +1,12 @@
 en:
+  user_mailer:
+    send_lesson_result:
+      your_result: "Your lesson result in course \"%{course}\""
+      results: "Your results"
+      question: "Question %{question_id}: "
+      point: "Your point is "
+      last: "/5"
+      you: "You 've just finish a lesson in course \"%{course}\", and this is your result."
   application:
     can't_access: "You can't access admin dashboard!"
   words:
