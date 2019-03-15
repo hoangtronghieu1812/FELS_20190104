@@ -47,13 +47,15 @@ class LessonsController < ApplicationController
         notification = @lesson.course.create_activity(:finished,
           owner: @lesson.user, recipient: recipient)
         if notification
-          NotificationJob.perform_later recipient
+          NotificationJob.perform_now recipient
             .number_of_activities , notification
         end
       end
     end
-    rescue StandardError
-      flash.now[:error] = t ".error"
+    rescue StandardError => exception
+      puts " ---
+      Error!!: #{exception.message}
+      ----"
       render :edit
 
   end

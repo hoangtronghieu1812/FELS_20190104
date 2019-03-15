@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     if @user
       require_details_from @user
-      @activities = User.get_activities_of @user.id
     else
       redirect_to root_path
       flash[:danger] = t".failed"

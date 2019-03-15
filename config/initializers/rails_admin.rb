@@ -24,42 +24,29 @@
 
   RailsAdmin.config do |config|
     config.parent_controller = "ApplicationController"
-    config.included_models = [Course, Word, User]
+    config.included_models = [Course, Word, User, WordAnswer]
     config.label_methods << :content
     config.authorize_with :cancancan
     config.current_user_method(&:current_user)
 
-    config.model "Word" do
-      create do
-        field :content
-        field :course_id
-      end
-    end
-
-    config.model "WordAnswer" do
-      create do
-        field :content
-        field :correct
-        field :word_id
-      end
-    end
-
     config.actions do
       dashboard                     # mandatory
-      index                    # mandatory
+      index do
+        except ['WordAnswer']
+      end                   # mandatory
       new do
-        except ['Word']
+        except ['Word', 'WordAnswer']
       end
       bulk_delete
       show
       edit do
-        except ['Word']
+        except ['Word', 'WordAnswer']
       end
       delete
       show_in_app
       new_word
       edit_word
-
+      import_word
       ## With an audit adapter, you can add:
       # history_index
       # history_show

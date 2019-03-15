@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root "static_pages#home"
 
   resources :users
+  resource :facebook
   resources :words, only: [:index]
   resources :courses, only: [:index]
   resources :searchs

@@ -10,3 +10,4 @@
 //= require create-lesson
 //= require word_answer
 //= require notification
+//= require fb_api

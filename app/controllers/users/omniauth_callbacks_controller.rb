@@ -4,6 +4,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     generic_callback :google
   end
 
+  def facebook
+    generic_callback :facebook
+  end
+
   def generic_callback provider
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
@@ -15,5 +19,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.#{provider}_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
+  end
+
+  def failure
+    redirect_to root_path
   end
 end

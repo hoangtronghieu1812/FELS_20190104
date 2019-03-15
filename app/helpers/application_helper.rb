@@ -42,6 +42,12 @@ module ApplicationHelper
             <span#{only_icon ? " style='display:none'" : ''}>#{wording}</span>
           </a>
         </li>
+        <li class="icon import_collection_link">
+          <a class="pjax" href="http://localhost:3000/admin/word/import_word">
+            <i class="icon-file"></i>
+            <span#{only_icon ? " style='display:none'" : ''}>Import words</span>
+          </a>
+        </li>
       ).html_safe
   end
 end

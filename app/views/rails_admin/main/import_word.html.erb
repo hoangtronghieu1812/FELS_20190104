@@ -1,0 +1,5 @@
+<h4><%= t(".title") %></h4>
+<%= form_tag import_word_path, multipart: true do %>
+    <%= file_field_tag :file, accept: 'xls/csv/ods/xlsx', multiple: true %>
+    <%= submit_tag t(".import"), class: "btn btn-success btn-import" %>
+<% end %>

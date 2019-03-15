@@ -30,8 +30,16 @@ gem "public_activity"
 gem "rails_admin", "=1.4.0"
 gem "cancancan", "~> 2.0"
 gem "searchkick", "~>3.1.0"
+gem "omniauth"
 gem "omniauth-google-oauth2", "=0.6.0"
 gem "sidekiq", "~>5.2.0"
+gem "roo", "~> 2.8.0"
+gem "roo-xls"
+gem "activerecord-import", "=0.22.0"
+gem "omniauth-facebook", "=5.0.0"
+gem "koala", "=3.0.0"
+
+
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

@@ -1,0 +1,58 @@
+<div id="fb-root"></div>
+<fb:login-button scope="user_birthday,user_hometown,user_location,user_likes,user_events,user_photos,user_videos,user_friends,user_status,user_tagged_places,user_posts,user_gender,user_link,user_age_range,email,read_insights,read_audience_network_insights,publish_video,manage_pages,pages_manage_cta,pages_manage_instant_articles,pages_show_list,publish_pages,read_page_mailboxes,ads_management,ads_read,business_management,pages_messaging,pages_messaging_phone_number,pages_messaging_subscriptions,instagram_basic,instagram_manage_comments,instagram_manage_insights,publish_to_groups,groups_access_member_info,leads_retrieval,public_profile">
+</fb:login-button>
+
+<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+
+<div class="form-facebook">
+<%= form_tag facebook_path, method: :post, multipart: true do %>
+  <div class="form-group">
+    <%= label_tag "message", "Message", class: "form-label" %>
+    <%= text_field_tag "message", nil , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "access_token", "Access token", class: "form-label" %>
+    <%= text_field_tag "access_token" , nil, class: "form-control access_token"%>
+  </div>
+  <button type="submit" class="btn btn-danger btn-block">Send</button>
+<% end %>
+</div>
+
+<div class="form-facebook">
+<%= form_tag facebook_path, method: :post, multipart: true do %>
+  <div class="form-group">
+    <%= label_tag "message", "Message", class: "form-label" %>
+    <%= text_field_tag "message", nil , class: "form-control" %>
+    <%= hidden_field_tag "page", nil %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "access_token", "Access token", class: "form-label" %>
+    <%= text_field_tag "access_token" , nil, class: "form-control access_token"%>
+  </div>
+  <button type="submit" class="btn btn-danger btn-block">Publish to page</button>
+<% end %>
+</div>
+
+<div class="form-facebook">
+<%= form_tag facebook_path, method: :get, multipart: true do %>
+  <div class="form-group">
+    <%= label_tag "node", "Node", class: "form-label" %>
+    <%= text_field_tag "node", nil , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag "edge", "Edge", class: "form-label" %>
+    <%= text_field_tag "edge", nil , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag "fields", "Fields", class: "form-label" %>
+    <%= text_field_tag "fields", nil , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "access_token", "Access token", class: "form-label" %>
+    <%= text_field_tag "access_token" , nil, class: "form-control access_token"%>
+  </div>
+  <button type="submit" class="btn btn-danger btn-block">Get node</button>
+<% end %>
+</div>
