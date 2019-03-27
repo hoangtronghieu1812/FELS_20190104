@@ -399,3 +399,8 @@ ul #notificationList
 .btn-center{
   margin: 10% 50%;
 }
+
+::selection{
+  color: white;
+  background: blue;
+}
