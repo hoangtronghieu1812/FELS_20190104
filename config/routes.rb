@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks:
     "users/omniauth_callbacks",sessions: "users/sessions"}
   root "static_pages#home"
+  get "/facebook/login", to: "facebooks#login", as: "login"
+  get "/facebook/login/success", to: "facebooks#login_success", as: "success"
 
   resources :users
   resource :facebook

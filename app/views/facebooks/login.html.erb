@@ -1,0 +1,11 @@
+<div class="form-facebook login">
+<%= form_tag "https://graph.facebook.com/v3.2/oauth/access_token", method: :get do %>
+  <div class="form-group">
+    <%= hidden_field_tag "client_id", ENV["app_id"] %>
+    <%= hidden_field_tag "redirect_uri", login_url %>
+    <%= hidden_field_tag "client_secret", ENV["app_secret"] %>
+    <%= hidden_field_tag "code", @code %>
+  </div>
+  <button type="submit" class="btn btn-success btn-block">Save access token to your account</button>
+<% end %>
+</div>

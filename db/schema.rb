@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_064014) do
+ActiveRecord::Schema.define(version: 2019_09_19_031502) do
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "trackable_type"
@@ -78,8 +78,9 @@ ActiveRecord::Schema.define(version: 2019_03_05_064014) do
     t.string "image"
     t.integer "role"
     t.string "provider"
-    t.string "uid"
+    t.string "access_token"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name", "age"], name: "index_users_on_name_and_age", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -96,6 +97,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_064014) do
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["content", "course_id"], name: "index_words_on_content_and_course_id", unique: true
   end
 
 end

@@ -29,7 +29,6 @@ gem "carrierwave"
 gem "public_activity"
 gem "rails_admin", "=1.4.0"
 gem "cancancan", "~> 2.0"
-gem "searchkick", "~>3.1.0"
 gem "omniauth"
 gem "omniauth-google-oauth2", "=0.6.0"
 gem "sidekiq", "~>5.2.0"
@@ -38,16 +37,12 @@ gem "roo-xls"
 gem "activerecord-import", "=0.22.0"
 gem "omniauth-facebook", "=5.0.0"
 gem "koala", "=3.0.0"
-
-
-
-group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-end
+gem "listen", ">= 3.0.5", "< 3.2"
+gem "byebug"
 
 group :development do
   gem "web-console", ">= 3.3.0"
-  gem "listen", ">= 3.0.5", "< 3.2"
+  gem 'rspec-rails', '~> 3.8'
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "pry"
