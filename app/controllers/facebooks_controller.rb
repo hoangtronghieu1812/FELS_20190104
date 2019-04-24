@@ -4,7 +4,7 @@ class FacebooksController < ApplicationController
 
   def login
     response_body = get_api_request "oauth/access_token?
-    client_id=#{ENV["app_id"]}&client_secret=#{ENV["app_secret"]}&code=#{params[:code]}&redirect_uri=https://c60ada31.ngrok.io/facebook/login"
+    client_id=#{ENV["app_id"]}&client_secret=#{ENV["app_secret"]}&code=#{params[:code]}&redirect_uri=https://5914e30e.ngrok.io/facebook/login"
     access_token = response_body["access_token"]
     details = get_api_request "me?fields=email,name&access_token=#{access_token}"
     user = User.find_by email: details["email"]
@@ -25,13 +25,16 @@ class FacebooksController < ApplicationController
   end
 
   def create
-     responses = @graph.get_connections "me", "accounts"
-     graph_page = Koala::Facebook::API.new responses[0]["access_token"]
+     # responses = @graph.get_connections "me", "accounts"
+     # graph_page = Koala::Facebook::API.new responses[0]["access_token"]
+     page_response = get_api_request "me" , "accounts"
+     page_access_token = page_response["access_token"]
     if params[:page]
       # responses = graph_page.put_connections "me","feed", message: params[:message]
       # responses = graph_page.put_object nil,"2779270585446576_2786495418057426", message: params[:message]
       # responses = graph_page.put_comment "2779270585446576_2786495418057426", params[:message]
-      responses = graph_page.put_like "2573340392737278_2590531271018190"
+      # responses = graph_page.put_like "2573340392737278_2590531271018190"
+      responses = post_api_request "me/feed?"
     elsif params[:batch]
       feed = graph_page.get_connections "me", "feed"
       responses = graph_page.batch do |batch_api|
@@ -56,6 +59,7 @@ class FacebooksController < ApplicationController
   end
 
   private
+
     def create_graph_api_object
       @graph = Koala::Facebook::API.new current_user.access_token
     end
@@ -64,4 +68,15 @@ class FacebooksController < ApplicationController
       uri = URI "https://graph.facebook.com/v3.2/#{endpoint}"
       response_body = JSON.parse Net::HTTP.get_response(uri).body
     end
+
+    def post_page_api_request endpoint, message, fields = 'id', page_token
+      uri = URI "https://graph.facebook.com/v3.2/#{endpoint}"
+      response_body = JSON.parse Net::HTTP.post_form(uri, 'message' => message,'fields' => fields,'access_token' => page_token).body
+    end
+
+    def delete_page_api_request endpoint, page_token
+      uri = URI "https://graph.facebook.com/v3.2/#{endpoint}"
+      response_body = JSON.parse Net::HTTP.delete(uri, 'access_token' => page_token)
+    end
+
 end

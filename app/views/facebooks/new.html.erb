@@ -8,6 +8,8 @@
   </div>
   <button type="submit" class="btn btn-primary btn-block">Login facebook</button>
 <% end %>
+
+<%= link_to "Login", "https://www.facebook.com/v3.2/dialog/oauth?client_id=#{ENV["app_id"]}&scope=#{Settings.facebook.permissions}&redirect_uri=#{login_url}" %>
 </div>
 
 <% else %>
