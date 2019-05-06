@@ -6,7 +6,7 @@ role :app, %w{troublehfrom18@10.0.37.78}
 role :web, %w{troublehfrom18@10.0.37.78}
 role :db,  %w{troublehfrom18@10.0.37.78}
 set :rails_env, :production
-set :branch, "capistrano"
+set :branch, "master"
 # Define server(s)
 
 server '10.0.37.78', user: 'troublehfrom18', roles: %w{app db web}
