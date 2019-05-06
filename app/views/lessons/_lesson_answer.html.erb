@@ -1,0 +1,14 @@
+<div class="word-answers" data-id="<%= f.index %>">
+  <div class="content-word">
+    <i class="fa fa-question-circle" aria-hidden="true"></i>
+    <span><%= f.object.word.content %></span>
+  </div>
+  <div class="list-answers">
+    <%= f.collection_radio_buttons :word_answer_id, f.object.word.word_answers,
+      :id, :content do |answer| %>
+      <%= answer.label {answer.radio_button + " " + answer.text} %>
+      <br/>
+    <% end %>
+  </div>
+    <%= f.hidden_field :word_id, value: f.object.word.id %>
+</div>

@@ -1,0 +1,406 @@
+@import "font-awesome";
+@import 'color';
+@import 'bootstrap';
+
+.body{
+  padding: 6% 0 0 10%;
+  width: 90%;
+}
+
+.filter-button{
+  width: 35px;
+  height: 20px;
+  border-radius: 3px;
+  background: $blue;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20%;
+  box-shadow: 0px 5px 40px rgba(29,34,47,0.15);
+  &:hover{
+  box-shadow: 0px 5px 40px rgba(29,34,47,0.45);
+  }
+}
+
+.form-3{
+  select{
+  padding: 0 10%;
+  }
+}
+.form-label{
+  font-weight: 700;
+}
+
+
+#select-btn{
+  margin: 2.5% 2% 1% -1%;
+}
+
+#filter-form{
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+.course_price{
+  a{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: $blue;
+  }
+}
+
+.paginator{
+  padding-top: 2%;
+  margin-left: 16px;
+}
+
+h2.headertekst {
+  text-align: center;
+  color: $orange;
+}
+
+.search_results em {
+  background-color: yellow;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.follow{
+  margin: 18% 0 0 -12%;
+}
+
+.true-answer{
+  font-color: white;
+  background-color: green;
+}
+.follow-btn{
+  height: 40px;
+  background: #f2f4f5;
+  font-size: 16px;
+  color: #384158;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-right: 10px;
+  padding-left: 21px;
+  padding-right: 20px;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  &:hover{
+    background: #14bdee;
+    color: #FFFFFF;
+  }
+}
+
+.course_info{
+  height: 68px;
+  margin-top: 28px;
+}
+
+.sidebar_teacher{
+  box-shadow: 0 1px 20px rgba(3,7,146,0.1);
+  height: 188px;
+}
+
+.teacher_meta{
+  width: 30%;
+  margin-left: 2%;
+}
+
+.teacher_image{
+  width: 105px;
+  height: 66px;
+}
+
+.teacher_title_container{
+  margin-left: 2%;
+  padding-top: 2%;
+}
+
+.course_info_items{
+  text-align: center;
+  padding-left: 0px;
+}
+
+.course_footer{
+  height: 78px;
+}
+
+.lesson-btn{
+  margin: 0 0 0 -85px;
+}
+
+.correct-btn{
+  margin-left: -58px;
+}
+
+.correct-answer{
+  background-color: green;
+  color: white;
+}
+
+.incorrect-answer{
+  background-color: red;
+  color: white;
+}
+
+.word-space{
+  margin-top: 4%;
+  margin-left: 2%;
+}
+
+.border-result{
+  padding-bottom: 0px;
+  border-bottom: 2px solid green;
+}
+.drop-list{
+  margin-left: 10%;
+}
+
+.btn-start{
+  margin-left: 85%;
+  margin-top: 85%;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.lesson-title{
+  text-align: center;
+}
+
+.lesson-answer{
+  width: 50%;
+  margin-top: 4%;
+  margin-left: 27%;
+}
+
+.word-answers{
+  box-shadow: 0 1px 20px rgba(3, 7, 146, 0.1);
+}
+
+.list-answers{
+  margin: 2% 0% 5% 4%;
+  font-size: 20px;
+}
+
+.content-word{
+  margin-left: 5%;
+  padding-top: 3%;
+  text-align: center;
+  color: #55555a;
+  font-size: 38px;
+  font-weight: 250px;
+}
+
+.fa-question-circle{
+  font-size: 42px;
+  color: #14bdee;
+}
+
+.btn-next{
+  text-align: center;
+}
+
+.btn-done{
+  text-align: center;
+}
+
+.details{
+  width: 100%;
+  height: 92px;
+  margin-top: 10px;
+  background: #f2f4f5;
+}
+
+.details_container{
+  width: 100%;
+}
+
+.progress{
+  width: 100%;
+  height: 36px;
+  background-color: white;
+  margin-left: 85%;
+}
+
+#question-number{
+  font-family: 'Roboto Slab', serif;
+  font-size: 24px;
+  color: $red;
+  margin-left: 0px;
+}
+
+.lesson-result{
+  color: red;
+}
+
+.btn-edit{
+  height: 20%;
+  margin-top: 20%;
+}
+
+.word-content{
+  padding: 0 0 2% 2%;
+}
+
+.word-title{
+  padding: 6% 0% 3% 10%;
+  margin: 0% 0% 0% -11%;
+}
+
+.fil-form{
+  box-shadow: 0 1px 20px rgba(3, 7, 146, 0.1);
+  width: 52%;
+}
+
+.btn-filter{
+  color: $black;
+  background-color: $gray-lighter;
+  border-color: $gray-darker;
+  width: 50px;
+  height: 29px;
+  margin-top: 25px;
+  margin-left: -17px;
+}
+
+.fil-condition{
+  margin-left: -6px;
+  margin-top: 15px;
+}
+
+.bell-btn i{
+  font-size: 25px;
+  &:hover{
+    color: #14bdee;
+  }
+}
+
+ul.notificator {
+  display: inline-block;
+  margin: 0;
+  li
+  {
+    position: relative;
+    list-style: none;
+
+    i
+    {
+      color: #fff;
+    }
+  }
+}
+
+#notification-counter {
+  position: absolute;
+  top: -4px;
+  left: -12px;
+  background-color: #d44e03;
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 3px;
+  font: 15px Verdana;
+}
+
+ul #notificationList
+{
+  li
+  {
+    position:relative;
+    border-bottom: #dddddd 1px solid;
+  }
+  span
+  {
+    color: #989494;
+    font-size: 14px;
+  }
+
+}
+
+#notificationsBody  ul
+{
+  padding-left: 0;
+}
+
+#notificationContainer
+{
+  background-color: #fff;
+  border: 1px solid rgba(100, 100, 100, .4);
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  overflow: visible;
+  position: absolute;
+  top: 37px;
+  margin-left: -366px;
+  width: 600px;
+  z-index: 0;
+  display: none;
+}
+
+
+#notificationContainer:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  color: transparent;
+  border: 10px solid black;
+  border-color: transparent transparent white;
+  margin-top: -20px;
+  margin-left: 258px;
+}
+
+#notificationTitle
+{
+  font-weight: bold;
+  padding: 8px;
+  font-size: 13px;
+  background-color: #f0f0f0;
+  position: absolute;
+  z-index: 1;
+  width: 600px;
+  border-bottom: 1px solid #d44e03;
+  color: #d44e03;
+}
+
+#notificationsBody
+{
+  padding: 3px 0 0 3px !important;
+  min-height: 600px;
+  max-height: 600px;
+  overflow: auto;
+  position: relative;
+  width: 100%;
+}
+
+
+#notificationFooter
+{
+  background-color: #e9eaed;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px;
+  font-size: 12px;
+  border-top: 1px solid #dddddd;
+}
+
+.form-facebook{
+  padding-top: 20px;
+  width: 500px;
+}
+.btn-center{
+  margin: 10% 50%;
+}
+
+::selection{
+  color: white;
+  background: blue;
+}

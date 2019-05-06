@@ -1,0 +1,12 @@
+<div class="super_container">
+<div class="active">
+<h2 class="headertekst"><%= t ".all_courses" %></h2>
+</div>
+  <div class="row courses_row">
+    <%= render @courses %>
+  </div>
+  <div class="paginator">
+    <%== pagy_bootstrap_nav @pagy %>
+  </div>
+  <img src="course_1.jpg">
+</div>

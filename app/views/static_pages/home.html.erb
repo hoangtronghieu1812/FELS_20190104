@@ -1,0 +1,31 @@
+<% provide(:title, (t".home_title") )%>
+<div class="super_container">
+ <div class="courses">
+    <div class="section_background parallax-window"
+      data-parallax="scroll"
+        data-image-src="images/courses_background.jpg" data-speed="0.8">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="section_title_container text-center">
+            <h2 class="section_title"><%= t ".welcome" %></h2>
+            <div class="section_subtitle">
+              <p><%= t ".description" %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row courses_row">
+          <%= render @courses %>
+        </div>
+        <div class="col">
+          <div class="courses_button trans_200">
+            <%= link_to t(".all_courses"), courses_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

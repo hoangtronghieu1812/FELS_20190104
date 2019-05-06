@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FELS20190104</title>
+    <title><%= (yield(:title)) %></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Unicat project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<%= image_path("favicon.ico") %>" rel="shortcut icon" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render "static_pages/header" %>
+    <div id="flash_message"><%= render "layouts/flash_message" %></div>
+    <div class="body">
+      <%= yield %>
+    </div>
+  <footer class="footer">
+  </footer>
   </body>
 </html>

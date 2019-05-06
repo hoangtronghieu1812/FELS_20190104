@@ -1,33 +1,204 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  user_mailer:
+    send_lesson_result:
+      your_result: "Your lesson result in course \"%{course}\""
+      results: "Your results"
+      question: "Question %{question_id}: "
+      point: "Your point is "
+      last: "/5"
+      you: "You 've just finish a lesson in course \"%{course}\", and this is your result."
+  application:
+    can't_access: "You can't access admin dashboard!"
+  words:
+    index:
+      word_list: "Word list"
+      index: "Index"
+      word: "Word"
+      answer: "Answer"
+      all_course: "All course"
+      filter: "filter"
+      AtoZ: "A-Z"
+      learning_condition: "Learning condition"
+      alphabet: "Alphabet"
+      course: "Course"
+      number_of_users: "Number of users learned this word"
+
+  courses:
+    index:
+      all_courses: "All courses"
+    course:
+      word: "Words"
+      learn: "Learn"
+      user: "User"
+
+  lessons:
+    lesson:
+      ago: " ago"
+      word: "Words"
+      word_learned: "Words learned:"
+    index:
+      all_lessons: "All lesson histories"
+      trainee: "Trainee:"
+      lessons: "Lessons"
+    edit:
+      learn_a_lesson: "Learn a lesson"
+      next: "Next"
+      submit: "Submit"
+      question: "Question: "
+      first_question: "1"
+      last_question: "/5"
+      failed: "Lesson not found!"
+      learned_all_words: "You have learned all words"
+    create:
+      fail: "Can't start lesson"
+    update:
+      error: "Error while submitting the answers!"
+
+  users:
+    sessions:
+      new:
+        welcome: "Welcome!"
+        signup: "Sign up"
+        have_an_acc?: "Have an account"
+    follow:
+      follow: Follow
+    unfollow:
+      unfollow: Unfollow
+    details:
+      memorised: "Memorised words: %{quantity} "
+      followers: "Followers: %{quantity}"
+      following: "Following: %{quantity}"
+    show:
+      study_history: "Study history"
+      activities: "Activities"
+      edit: "Edit"
+
+  static_pages:
+    home:
+      welcome: "Welcome to HTeducation"
+      ht: "HT"
+      edu: "education"
+      logout: "Log out"
+      login: "Log in"
+      home_title: "HTeducation"
+      all_courses: "View all courses"
+    header:
+      ht: "HT"
+      edu: "education"
+      home: "Home"
+      courses: "Courses"
+      login: "Login"
+      word_list: "Word list"
+      search: "Search"
+      search_icon: "search"
+      lessons: "Lessons"
+      user: "User"
+    notification_center:
+      notifications: "Notifications"
+
+  courses:
+    index:
+      all_courses: "All courses"
+    course:
+      word: "Words"
+      learn: "Learn"
+      user: "User"
+      start: "Start"
+
+  searchs:
+    index:
+      courses: "Results for courses"
+      words: "Results for words"
+      doesnot_match: "Your search doesn't match any results!"
+    searching_course:
+      word: "Words"
+      learn: "Learn"
+      user: "User"
+      profile: "Profile"
+      lessons: "Lessons"
+      logout: "Log out"
+
+  public_activity:
+    relationship:
+      create:
+        followed: " was now following "
+        rela: "Relationship"
+      destroy:
+        unfollow: " unfollowed "
+        rela: "Relationship"
+    lesson:
+      create:
+        learning: "Learning"
+        created: " created "
+        lesson: " Lesson "
+    course:
+      finished:
+        finish: " 've just finished "
+        course: "Course"
+
+  results:
+    index:
+      results: "Your results"
+      question: "Question %{question_id}: "
+      point: "Your point is "
+      last: "/5"
+
+  relationships:
+    destroy:
+      none: "Can't find out relationship!."
+    get_followed_user:
+      failed: "Can't find user!"
+
+  devise:
+    registrations:
+      edit:
+        edit: "Edit"
+        update: "Update"
+        current_password_require: "we need your current password to confirm your changes"
+        confirm: "Are you sure?"
+        cancel_my_account: "Cancel my account"
+        un_happy: "Unhappy?"
+        back: "Back"
+        currently_waiting: "Currently waiting confirmation for:"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot_password: "Forgot your password?"
+        didn't_receive_confirmation: "Didn't receive confirmation instructions?"
+        didn't_receive_unlock: "Didn't receive unlock instructions?"
+        sign_in_with: "Sign in with %{social}"
+
+  admin:
+    actions:
+      new_word:
+        title: "Add Word"
+        breadcrumb: "New"
+        save: "Save"
+        fail: "Word create failed, try again!"
+      edit_word:
+        title: "Edit Word"
+        breadcrumb: "Edit"
+        menu: "Edit"
+      import_word:
+        title: Import Words
+        breadcrumb: "Import"
+  rails_admin:
+    main:
+      new_word:
+        save: "Save"
+      edit_word:
+        save: "Save"
+      word_answer_fields:
+        word_answer: "Word answer:"
+        remove: "Remove"
+        correct_answer: "True"
+        in_correct_answer: "False"
+      form:
+        add: "Add an answer"
+      import_word:
+        title: "Import from Excel file"
+        import: "Import"
+
+
+

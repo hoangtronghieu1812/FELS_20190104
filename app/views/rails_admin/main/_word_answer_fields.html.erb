@@ -1,0 +1,19 @@
+<fieldset>
+  <%= f.hidden_field :id %>
+  <%= f.hidden_field :_destroy, value: 0, class: "allow-destroy" %>
+  <div class="word-answer-content">
+    <p><%= t ".word_answer" %></p>
+    <div class="form-group control-group string_type name_field">
+      <%= f.label :content, class: "col-sm-2 control-label" %>
+      <%= f.text_field :content, class: "col-sm-10 form-control" %>
+    </div>
+    <div class="form-group control-group string_type name_field">
+      <%= f.label :correct, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.radio_button :correct, Settings.admin.correct %><%= t ".correct_answer" %>
+        <%= f.radio_button :correct, Settings.admin.incorrect %><%= t ".in_correct_answer" %>
+      </div>
+    </div>
+    <%= link_to t(".remove"), '#', class: "remove_fields" %>
+  </div>
+</fieldset>

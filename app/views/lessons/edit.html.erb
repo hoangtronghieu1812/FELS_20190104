@@ -1,0 +1,21 @@
+<% provide :title, t(".learn_a_lesson") %>
+<h1 class="lesson-title"><%= t ".learn_a_lesson" %></h1>
+<div class="row">
+  <div class="progress"><h3> <%= t ".question" %>
+    <span id="question-number"><%= t ".first_question" %></span>
+      <%= t ".last_question" %></h3>
+  </div>
+  <div class="lesson-answer">
+    <%= form_for @lesson do |f| %>
+      <%= f.fields_for :lesson_answers do |ff| %>
+        <%= render "lesson_answer", f: ff %>
+      <% end %>
+      <div class="btn-done">
+        <%= f.submit t(".submit"), class: "btn btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="btn-next">
+  <%= button_tag t(".next"), class: "btn btn-primary" %>
+</div>

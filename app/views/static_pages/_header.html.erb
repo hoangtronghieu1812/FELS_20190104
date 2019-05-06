@@ -1,0 +1,85 @@
+<header class="header">
+  <!-- Header Content -->
+  <div class="header_container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="header_content d-flex flex-row
+            align-items-center justify-content-start">
+            <div class="logo_container">
+              <a href=<%= root_path %>>
+                <div class="logo_text"><%= t".ht" %>
+                  <span><%= t".edu" %></span></div>
+              </a>
+            </div>
+            <nav class="main_nav_contaner ml-auto">
+              <ul class="main_nav">
+                <div id="menu">
+                <li class="link active">
+                  <%= link_to t(".home"), root_path %>
+                </li>
+
+                <li class="link"><%= link_to t(".about"), "#" %></li>
+
+                <% if user_signed_in? %>
+                  <li class="link"><%= link_to t(".courses"), courses_path %></li>
+
+                  <li class="link"><%= link_to t(".word_list"), words_path %></li>
+
+                  <li class="link">
+                    <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
+                  </li>
+
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <%= t ".user" %> <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item"><%= link_to t(".profile"), @current_user %></li>
+                      <li class="dropdown-item"><%= link_to t(".lessons"), lessons_path %></li>
+                      <div class="dropdown-divider"></div>
+                      <li class="dropdown-item">
+                        <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <%= render "static_pages/notification_center" %>
+
+                  <div class="search_button"><i class="fa fa-search"
+                   aria-hidden="true"></i></div>
+
+                <% else %>
+                  <li class="link">
+                    <%= link_to t(".login"), new_user_session_path %>
+                  </li>
+                <% end %>
+              </div>
+              </ul>
+              <!-- Hamburger -->
+            </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- Header Search Panel -->
+  <div class="header_search_container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+            <%= form_tag searchs_path, method: :get,
+              class: "header_search_form" do %>
+              <%= text_field_tag :query, params[:query],
+                class: "search_input", placeholder: t(".search"),
+                 required: true %>
+              <%= button_tag fa_icon(t(".search_icon"), aria: {hidden: true}),
+                class: "header_search_button d-flex flex-column align-items-center justify-content-center" %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

@@ -52,3 +52,13 @@ node_modules/
 /config/master.key
 .idea/
 /test/*
+database.yml
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+app/assets/bootstrap4
+app/assets/font-awsome
+question.md
+/public/uploads
+# Ignore application configuration
+/config/application.yml

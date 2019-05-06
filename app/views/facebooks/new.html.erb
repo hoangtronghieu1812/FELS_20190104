@@ -1,0 +1,72 @@
+<% unless user_signed_in? %>
+<div class="form-facebook login">
+<%= form_tag "https://www.facebook.com/v3.2/dialog/oauth", method: :get do %>
+  <div class="form-group">
+    <%= hidden_field_tag "client_id", ENV["app_id"] %>
+    <%= hidden_field_tag "scope", Settings.facebook.permissions %>
+    <%= hidden_field_tag "redirect_uri", login_url %>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">Login facebook</button>
+<% end %>
+
+<%= link_to "Login", "https://www.facebook.com/v3.2/dialog/oauth?client_id=#{ENV["app_id"]}&scope=#{Settings.facebook.permissions}&redirect_uri=#{login_url}" %>
+</div>
+
+<% else %>
+
+<div class="form-facebook">
+<%= form_tag facebook_path, method: :post, multipart: true do %>
+  <div class="form-group">
+    <%= label_tag "message", "Message", class: "form-label" %>
+    <%= text_field_tag "message", nil , class: "form-control" %>
+    <%= hidden_field_tag "page", nil %>
+    <%= hidden_field_tag "fields", "id" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "access_token", "Access token", class: "form-label" %>
+    <%= hidden_field_tag "access_token" , @current_user.access_token, class: "form-control"%>
+  </div>
+  <button type="submit" class="btn btn-danger btn-block">Publish to page</button>
+<% end %>
+</div>
+
+<div class="form-facebook">
+<%= form_tag facebook_path, method: :post, multipart: true do %>
+  <div class="form-group">
+    <%= label_tag "comment", "Multi comment", class: "form-label" %>
+    <%= text_field_tag "comment", nil , class: "form-control" %>
+    <%= hidden_field_tag "batch", nil %>
+    <%= hidden_field_tag "fields", "id" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "access_token", "Access token", class: "form-label" %>
+    <%= hidden_field_tag "access_token" , @current_user.access_token, class: "form-control"%>
+  </div>
+  <button type="submit" class="btn btn-danger btn-block">Add multi comments</button>
+<% end %>
+</div>
+
+<div class="form-facebook">
+<%= form_tag facebook_path, method: :get, multipart: true do %>
+  <div class="form-group">
+    <%= label_tag "node", "Node", class: "form-label" %>
+    <%= text_field_tag "node", nil , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag "edge", "Edge", class: "form-label" %>
+    <%= text_field_tag "edge", nil , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag "fields", "Fields", class: "form-label" %>
+    <%= text_field_tag "fields", nil , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "access_token", "Access token", class: "form-label" %>
+    <%= hidden_field_tag "access_token" , @current_user.access_token, class: "form-control"%>
+  </div>
+  <button type="submit" class="btn btn-danger btn-block">Get node</button>
+<% end %>
+</div>
+<% end %>

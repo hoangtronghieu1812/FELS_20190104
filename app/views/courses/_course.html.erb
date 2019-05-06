@@ -1,0 +1,42 @@
+<div class="col-lg-4 course_col">
+  <div class="course">
+    <div class="course_image">
+      <%= image_tag(course.image.url) %>
+    </div>
+    <div class="course_body">
+      <h3 class="course_title">
+        <%= course.name %>
+      </h3>
+      <div class="course_text">
+        <p><%= course.description %></p>
+      </div>
+    </div>
+    <div class="course_footer">
+      <div class="course_footer_content d-flex flex-row
+        align-items-center justify-content-start">
+        <div class="course_info">
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          <span><%= pluralize @course_with_users[course.id], t(".user") %></span>
+        </div>
+       <div class="course_info">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <span><%= course.words_size %> <%= t ".word" %></span>
+        </div>
+        <% if @current_user %>
+          <div class="lesson">
+            <%= form_for @current_user.lessons.build do |f| %>
+              <%= f.hidden_field :course_id, value: course.id %>
+              <div class="course_price ml-auto">
+                <%= f.submit t(".start"), class: "btn btn-primary btn-start" %>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="course_price ml-auto">
+            <%= link_to t(".learn"), courses_path %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

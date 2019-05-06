@@ -1,0 +1,27 @@
+<div class="sidebar_teacher">
+  <div class="teacher_title_container d-flex flex-row align-items-center justify-content-start">
+    <div class="teacher_image"><%= image_tag(lesson.course.image.url) %></div>
+    <div class="teacher_title">
+      <div class="teacher_name"> <%= link_to lesson.course.name, "#" %></div>
+      <div class="teacher_position">
+        <%= lesson.course.words_size %> <%= t ".word" %>
+      </div>
+    </div>
+  </div>
+  <div class="teacher_meta_container">
+    <div class="teacher_meta d-flex flex-row align-items-center justify-content-start">
+      <div class="teacher_meta_title"><%= t ".word_learned" %></div>
+      <div class="teacher_meta_text ml-auto">
+        <span><%= lesson.lesson_answers_size %></span>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="teacher_meta d-flex flex-row align-items-center justify-content-start">
+      <div class="teacher_meta_title">Time:</div>
+      <div class="teacher_meta_text ml-auto">
+        <span><%= time_ago_in_words(lesson.created_at) %><%= t ".ago" %></span>
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</div>
