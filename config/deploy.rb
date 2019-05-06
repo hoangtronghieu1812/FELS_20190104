@@ -4,7 +4,7 @@ set :application, 'fels_20190104'
 
 # set :repo_url, 'https://github.com/[user name]/[application name].git'
 
-set :git
+set :git, :scm
 set :repo_url, 'https://github.com/hoangtronghieu1812/FELS_20190104'
 
 # Define where to put your application code
