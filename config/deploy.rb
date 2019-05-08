@@ -9,7 +9,7 @@ set :repo_url, 'https://github.com/hoangtronghieu1812/FELS_20190104.git'
 
 # Define where to put your application code
 
-set :deploy_to, "/home/troublehfrom18/environment/deploy/FELS_20190104"
+set :deploy_to, "/var/www/fels/"
 
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')

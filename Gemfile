@@ -42,6 +42,7 @@ gem 'capistrano-rails', require: false
 gem 'capistrano-bundler', require: false
 gem 'capistrano-rbenv'
 gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-passenger'
 
 group :development do
   gem "web-console", ">= 3.3.0"
