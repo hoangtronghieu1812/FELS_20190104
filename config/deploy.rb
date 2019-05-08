@@ -64,7 +64,7 @@ set :rbenv_ruby, '2.6.0'
 # end
 namespace :deploy do
   desc "reload the database with seed data"
-  task :seed do
+  after :restart, :seed do
     on roles(:all) do
       within current_path do
         execute :bundle, :exec, 'rails', 'db:seed', 'RAILS_ENV=production', 'DISABLE_DATABASE_ENVIRONMENT_CHECK=1'
