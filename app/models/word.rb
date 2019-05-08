@@ -1,5 +1,4 @@
 class Word < ApplicationRecord
-  searchkick word_start: [:content], highlight: [:content]
   belongs_to :course
   has_many :word_answers, dependent: :destroy
   has_many :lesson_answers, dependent: :destroy
