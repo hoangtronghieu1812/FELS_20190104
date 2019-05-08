@@ -62,3 +62,12 @@ set :rbenv_ruby, '2.6.0'
 # end
 
 # end
+namespace :deploy do
+
+  after :restart, :clear_cache do
+    on roles(:web, :db), in: :groups, limit: 3, wait: 10 do
+      run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=production"
+    end
+  end
+
+end
