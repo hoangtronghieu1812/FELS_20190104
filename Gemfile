@@ -29,7 +29,6 @@ gem "carrierwave"
 gem "public_activity"
 gem "rails_admin", "=1.4.0"
 gem "cancancan", "~> 2.0"
-gem "searchkick", "~>3.1.0"
 gem "omniauth"
 gem "omniauth-google-oauth2", "=0.6.0"
 gem "sidekiq", "~>5.2.0"
@@ -43,6 +42,8 @@ gem 'capistrano-rails', require: false
 gem 'capistrano-bundler', require: false
 gem 'capistrano-rbenv'
 gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-passenger'
+gem 'capistrano-rails-db'
 
 group :development do
   gem "web-console", ">= 3.3.0"

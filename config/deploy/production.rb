@@ -2,14 +2,10 @@
 
 # role :name, %{[user]@[IP adde.]}
 
-role :app, %w{troublehfrom18@10.0.37.78}
-role :web, %w{troublehfrom18@10.0.37.78}
-role :db,  %w{troublehfrom18@10.0.37.78}
-set :rails_env, :production
-set :branch, "capistrano"
+role :app, %w{hieubth@10.0.33.25}
+role :web, %w{hieubth@10.0.33.25}
+role :db,  %w{hieubth@10.0.33.25}
 # Define server(s)
-
-server '10.0.37.78', user: 'troublehfrom18', roles: %w{app db web}
 
 # SSH Options
 
