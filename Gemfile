@@ -45,7 +45,6 @@ gem 'capistrano', '~> 3.4.0'
 gem 'capistrano-passenger'
 gem 'capistrano-rails-db'
 
-
 group :development do
   gem "web-console", ">= 3.3.0"
   gem "listen", ">= 3.0.5", "< 3.2"
