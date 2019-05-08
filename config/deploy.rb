@@ -63,11 +63,8 @@ set :rbenv_ruby, '2.6.0'
 
 # end
 namespace :deploy do
-
-  after :restart, :clear_cache do
-    on roles(:web, :db), in: :groups, limit: 3, wait: 10 do
-      run "cd /var/www/fels/current; bundle exec rake db:seed RAILS_ENV=production"
-    end
+  desc "reload the database with seed data"
+  after :restart, :seed do
+    run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
   end
-
 end
