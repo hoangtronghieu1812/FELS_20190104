@@ -66,7 +66,7 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web, :db), in: :groups, limit: 3, wait: 10 do
-      run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=production"
+      run "cd /var/www/fels/current; bundle exec rake db:seed RAILS_ENV=production"
     end
   end
 
