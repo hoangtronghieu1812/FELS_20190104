@@ -2,9 +2,9 @@
 
 # role :name, %{[user]@[IP adde.]}
 
-role :app, %w{hieubth@10.0.33.25 hieubht@10.0.33.71}
-role :web, %w{hieubth@10.0.33.25 hieubht@10.0.33.71}
-role :db,  %w{hieubth@10.0.33.25 hieubht@10.0.33.71}
+role :app, %w{hieubth@10.0.33.25}
+role :web, %w{hieubth@10.0.33.25}
+role :db,  %w{hieubth@10.0.33.25}
 # Define server(s)
 
 # SSH Options
